@@ -1,29 +1,77 @@
 ---
-const currentYear = new Date().getFullYear()
+import GithubIcon from "@/components/icons/GitHub.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import XIcon from "@/components/icons/X.astro";
+
+const currentYear = new Date().getFullYear();
+
+const github = "https://github.com/Guille0197";
+const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
+const x = "https://x.com/gan01_97";
 ---
 
 <footer
-  class="opacity-80 m-4 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+  class="opacity-80 m-4 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl flex justify-center"
 >
-  <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
-  >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">midudev</a>. Casi
-      todos los derechos reservados
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
-      </li>
-      <li>
-        <a id="contacto" href="mailto:miduga@gmail.com" class="hover:underline"
-          >Contacto</a
+  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <span
+        class="flex justify-center text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        >© {currentYear} Hecho con
+        <span
+          class="ml-1 inline-block transform transition-all duration-1000 animate-pulse"
         >
-      </li>
-    </ul>
+          ❤️
+        </span>
+        <a href="https://github.com/Guille0197" class="ml-1 hover:underline"
+          >Guillermo Navarro</a
+        >
+      </span>
+      <div class="flex mt-4 justify-center sm:justify-center sm:mt-0">
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-500 hover:text-gray-900 dark:hover:text-white md:hover:scale-105"
+        >
+          <GithubIcon />
+          <span class="sr-only">GitHub</span>
+        </a>
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 md:hover:scale-105"
+        >
+          <LinkedInIcon />
+          <span class="sr-only">LinkedIn</span>
+        </a>
+        <a
+          href={x}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 md:hover:scale-105"
+        >
+          <XIcon />
+          <span class="sr-only">X.com</span>
+        </a>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-center opacity-80">
+      <small
+        class="text-gray-700 gray:text-gray-200 text-center hidden md:block"
+      >
+        Inspirado en{" "}
+        <a
+          href="https://porfolio.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:underline hover:text-blue-800 gray:text-primary-400 font-bold"
+        >
+          porfolio.dev
+        </a>{" "}
+        de <span class="font-bold">@midudev</span>
+      </small>
+    </div>
   </div>
 </footer>

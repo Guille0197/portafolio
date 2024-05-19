@@ -1,27 +1,28 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Setting from "@/components/icons/Setting.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TechStack from "@/components/TechStack.astro";
 ---
 
 <Layout
-  title="Porfolio de midudev - Desarrollador y Programador Web con 15 años de experiencia"
-  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+  title="Guillermo Navarro | Software Developer 👨🏽‍💻"
+  description="Programador web y móvil especializado en sitios dinámicos y funcionales. Descubre mi portafolio y lleva tu proyecto digital al siguiente nivel con soluciones a medida. ¡Contáctame para comenzar hoy mismo!"
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
-    <div class="space-y-24">
+  </main>
+  <div class="space-y-24">
     <SectionContainer id="experiencia">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
@@ -39,6 +40,14 @@ import Hero from "@/components/Hero.astro"
         <CodeIcon class="size-7" />
         Proyectos
       </h2>
+      <section class="mb-4">
+        <p class="text-gray-700 dark:text-gray-300">
+          Mis proyectos más emocionantes y creativos. Cada uno es el resultado
+          de mi dedicación y pasión por la programación, y me entusiasma
+          compartirlos contigo. Descubre cómo convierto ideas en realidades
+          digitales. ¡Explora, inspírate y crea con mis proyectos de software!
+        </p>
+      </section>
       <Projects />
     </SectionContainer>
 
@@ -51,6 +60,24 @@ import Hero from "@/components/Hero.astro"
       </h2>
       <AboutMe />
     </SectionContainer>
+
+    <SectionContainer>
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <Setting class="size-8" />
+        Tecnologías
+      </h2>
+      <section class="mb-4">
+        <p class="text-gray-700 dark:text-gray-300">
+          A lo largo de <span class="text-blue-400"
+            >mi trayectoria en el mundo de la programación</span
+          >, he acumulado <span class="text-blue-400"
+            >experiencia y habilidades</span
+          > en diversas tecnologías. Mi stack tecnológico incluye:
+        </p>
+        <TechStack />
+      </section>
+    </SectionContainer>
   </div>
-  </main>
 </Layout>

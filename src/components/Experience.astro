@@ -1,29 +1,46 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+import ExperienceItem from "./ExperienceItem.astro";
+interface Experience {
+  title: string;
+  company: string;
+  date: string;
+  description: string;
+  link?: string;
+}
+
+const EXPERIENCE: Experience[] = [
   {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
+    title: "Programador Full-Stack",
+    company: "Banco General ",
+    date: "Septiembre 2022 - Actualidad",
     description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+      "Actualmente, contribuyo al desarrollo y mejora de la aplicación móvil de banca en línea. Integro nuevas funcionalidades y un diseño atractivo para mejorar la experiencia de +1 millón de usuarios. Utilizo Angular con Ionic para el Frontend y Java con Spring Boot para los servicios API REST, aprovechando la escalabilidad de AWS. Colaboro estrechamente con diseñadores, convirtiendo sus ideas en código sólido.",
+    link: "https://www.bgeneral.com/personas/banca-movil/",
   },
   {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
+    title: "Analista Programador",
+    company: "ASSA Compañia de Seguros",
+    date: "Octubre 2020 - Agosto 2022",
     description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+      "Inicié como desarrollador backend enfocado en C# y .Net Core, luego me adentré en el desarrollo frontend con React y React Native. Me especialicé en aplicaciones web y móvil para el sector de seguros a usuarios finales. Adquirí experiencia en JavaScript, TypeScript, React, React Native, C# (.Net Core), metodologías Agile y SCRUM, Azure DevOps, CI/CD, PostgreSQL, TDD y pruebas unitarias.",
+    link: "https://auto.assanet.com/autopx/",
   },
-]
+  {
+    title: "Desarrollador Web Júnior",
+    company: "Diprocess.com",
+    date: "2019 - 2020",
+    description:
+      "Participé en proyectos web en diversas etapas, para empresas de varios sectores, desde el desarrollo inicial hasta el mantenimiento. Desarrollé interfaces de usuario con HTML5, CSS3 y JavaScript, creación de servicios REST (API) con C# y .Net Core. Gestioné y diseñé bases de datos con Microsoft SQL Server y utilicé Azure DevOps para automatizar el flujo de CI/CD.",
+    link: "https://diprocess.com/",
+  },
+];
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
+    EXPERIENCE.map((experience) => (
       <li class="">
-        <ExperienceItem {...experiencie} />
+        <ExperienceItem {...experience} />
       </li>
     ))
   }

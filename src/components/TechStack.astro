@@ -1,0 +1,91 @@
+---
+import { MY_STACK } from "@/util/Stack";
+---
+
+<section
+  class="grid lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:place-content-center my-4"
+>
+  <!-- FRONTEND -->
+  <div
+    class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
+  >
+    <h3
+      class="text-center mb-8 text-xl font-semibold lg:text-4xl lg:break-words text-blue-400"
+    >
+      Frontend
+    </h3>
+    <ul class="grid grid-cols-3 gap-4">
+      {
+        MY_STACK.frontend.map((skill) => (
+          <li class=" rounded-2xl  group flex flex-col fle justify-center items-center">
+            <skill.icon class="size-12 mb-2" />
+            <span class=" text-sm w-full text-center">{skill.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <!-- BACKEND -->
+  <div
+    class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
+  >
+    <h3
+      class="text-center mb-8 text-xl font-semibold lg:text-4xl lg:break-words text-blue-400"
+    >
+      Backend
+    </h3>
+    <ul class="grid grid-cols-3 gap-4">
+      {
+        MY_STACK.backend.map((skill) => (
+          <li class=" rounded-2xl  group flex flex-col fle justify-center items-center">
+            <skill.icon class="size-12 mb-2" />
+            <span class=" text-sm w-full text-center">{skill.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <!-- TOOLS -->
+  <div
+    class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
+  >
+    <h3
+      class="text-center mb-8 text-xl font-semibold lg:text-4xl lg:break-words text-blue-400"
+    >
+      Herramientas
+    </h3>
+    <ul class="grid grid-cols-3 gap-4">
+      {
+        MY_STACK.tools.map((skill) => (
+          <li class=" rounded-2xl  group flex flex-col fle justify-center items-center">
+            <skill.icon class="size-12 mb-2" />
+            <span class=" text-sm w-full text-center">{skill.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <!-- LEARNING -->
+  <div
+    class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700"
+  >
+    <h3
+      class="text-center mb-8 text-xl font-semibold lg:text-4xl lg:break-words text-blue-400"
+    >
+      Aprendiendo
+    </h3>
+    <ul class="grid grid-cols-3 gap-4">
+      {
+        MY_STACK.learning.map((skill) => (
+          <li class=" rounded-2xl  group flex flex-col fle justify-center items-center">
+            <skill.icon class="size-12 mb-2" />
+            <span class=" text-sm w-full text-center">{skill.name}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

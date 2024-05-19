@@ -1,23 +1,47 @@
 ---
-import "@fontsource-variable/onest"
+import "@fontsource-variable/onest";
 
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import { ViewTransitions } from "astro:transitions"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { description, title } = Astro.props
+const { description, title } = Astro.props;
+
+const metaKeywords =
+  "Guillermo Navarro, desarrollador web, desarrollador móvil, portafolio, programador, software developer, programador web, desarrollo de software, diseño web, frontend, full stack, full-stack, React, Angular, Next.js, Astro";
+const metaAuthor = "Guillermo Navarro";
+const metaUrl = "https://www.tu-sitio-web.com"; //TODO: corregir esto
+const metaTwitter = "@gan01_97";
+const metaImageUrl =
+  "https://guille0197.github.io/landing-profile/images/profilePhoto.jpeg"; //TODO: corregir esto
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={metaKeywords} />
+    <meta name="author" content={metaAuthor} />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={metaUrl} />
+    <meta property="og:image" content={metaImageUrl} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={metaTwitter} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={metaImageUrl} />
+
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />

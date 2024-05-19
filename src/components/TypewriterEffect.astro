@@ -1,0 +1,84 @@
+---
+
+---
+
+<style>
+  .typewriter {
+    font-family: "Onest Variable", system-ui, sans-serif;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid rgb(37 99 235);
+    min-height: 1.1em;
+    animation:
+      typing 2s steps(30, end),
+      blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(37 99 235);
+    }
+  }
+</style>
+
+<div class="typewriter-container my-2">
+  <h2
+    class="typewriter text-blue-600 text-3xl md:text-3xl lg:text-4xl font-bold tracking-tight dark:text-blue-200"
+  >
+  </h2>
+</div>
+
+<script>
+  let texts = [
+    "Frontend Developer",
+    "Software Engineer",
+    "Full-Stack Developer",
+    "Web Developer",
+    "Software Developer",
+    "Programador",
+  ];
+  let index = 0;
+  let textIndex = 0;
+  const typingSpeed = 100; // Velocidad de tipeo (ms)
+  const erasingSpeed = 50; // Velocidad de borrado (ms)
+  const delayBetweenTexts = 2500; // Retraso entre textos (ms)
+
+  function typeText() {
+    const typewriterElement = document.querySelector(".typewriter")!;
+    if (textIndex < texts[index].length) {
+      typewriterElement.textContent += texts[index][textIndex];
+      textIndex++;
+      setTimeout(typeText, typingSpeed);
+    } else {
+      setTimeout(eraseText, delayBetweenTexts);
+    }
+  }
+
+  function eraseText() {
+    const typewriterElement = document.querySelector(".typewriter")!;
+    if (textIndex > 0) {
+      typewriterElement.textContent = texts[index].substring(0, textIndex - 1);
+      textIndex--;
+      setTimeout(eraseText, erasingSpeed);
+    } else {
+      index = (index + 1) % texts.length;
+      setTimeout(typeText, typingSpeed);
+    }
+  }
+
+  typeText();
+</script>

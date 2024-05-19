@@ -1,20 +1,33 @@
 ---
-const personalImageAlt = "Miguel Ángel"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const altText = "Guillermo Navarro - gan01_97";
+const imageUrl =
+  "https://media.licdn.com/dms/image/C4D03AQHOUR_buXSVCg/profile-displayphoto-shrink_800_800/0/1641999912324?e=1721865600&v=beta&t=G39UR5Csjp3vIt-mYas14-DP8Pq__W-Bk1Wtxvm1zu0";
+const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
+
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import DownloadIcon from "@/components/icons/Download.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import TypewriterEffect from "./TypewriterEffect.astro";
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-16"
-      src="/midudev.webp"
-      alt={personalImageAlt}
-    />
     <a
-      href="https://linkedin.com/in/midudev"
+      href={linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="md:hover:scale-105"
+    >
+      <img
+        class="rounded-full shadow-lg size-20"
+        src={imageUrl}
+        alt={altText}
+      />
+    </a>
+    <a
+      href={linkedin}
       target="_blank"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
@@ -25,22 +38,27 @@ import SocialPill from "@/components/SocialPill.astro"
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hey, soy midudev
+    Hola, soy Guillermo
   </h1>
+  <TypewriterEffect />
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-blue-200 [&>strong]:text-blue-600 [&>strong]:font-semibold dark:text-gray-300 text-balance"
   >
-    +15 años de experiencia. <strong
-      >Ingeniero de Software y Creador de Contenido sobre Programación</strong
-    > de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web
-    únicas.
+    Con <strong>+4 años</strong> de experiencia. Especializado en el desarrollo de
+    <strong>aplicaciones web</strong> y <strong>móviles</strong> únicas. Desde Panamá
+    🇵🇦.
   </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:miduga@gmail.com">
+
+  <nav class="flex gap-3 mt-8 flex-nowrap">
+    <SocialPill>
+      <DownloadIcon class="size-4" />
+      CV
+    </SocialPill>
+    <SocialPill href="mailto:gnavarro0197@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/midudev">
+    <SocialPill href={linkedin}>
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>

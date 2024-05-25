@@ -22,7 +22,7 @@ import TechStack from "@/components/TechStack.astro";
       <Hero />
     </SectionContainer>
   </main>
-  <div class="space-y-24">
+  <div class="space-y-24 px-4">
     <SectionContainer id="experiencia">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
@@ -41,11 +41,14 @@ import TechStack from "@/components/TechStack.astro";
         Proyectos
       </h2>
       <section class="mb-4">
-        <p class="text-gray-700 dark:text-gray-300">
+        <p
+          class="text-gray-700 [&>strong]:text-sky-500 dark:[&>strong]:text-sky-500"
+        >
           Mis proyectos más emocionantes y creativos. Cada uno es el resultado
-          de mi dedicación y pasión por la programación, y me entusiasma
-          compartirlos contigo. Descubre cómo convierto ideas en realidades
-          digitales. ¡Explora, inspírate y crea con mis proyectos de software!
+          de mi <strong>dedicación</strong> y <strong>pasión</strong> por la programación,
+          y me entusiasma compartirlos contigo. Descubre cómo convierto <strong
+            >ideas</strong
+          > en realidades digitales.
         </p>
       </section>
       <Projects />
@@ -70,9 +73,9 @@ import TechStack from "@/components/TechStack.astro";
       </h2>
       <section class="mb-4">
         <p class="text-gray-700 dark:text-gray-300">
-          A lo largo de <span class="text-blue-400"
+          A lo largo de <span class="text-sky-500 font-bold"
             >mi trayectoria en el mundo de la programación</span
-          >, he acumulado <span class="text-blue-400"
+          >, he acumulado <span class="text-sky-500 font-bold"
             >experiencia y habilidades</span
           > en diversas tecnologías. Mi stack tecnológico incluye:
         </p>

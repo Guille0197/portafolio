@@ -3,11 +3,12 @@ const altText = "Guillermo Navarro - gan01_97";
 const imageUrl =
   "https://media.licdn.com/dms/image/C4D03AQHOUR_buXSVCg/profile-displayphoto-shrink_800_800/0/1641999912324?e=1721865600&v=beta&t=G39UR5Csjp3vIt-mYas14-DP8Pq__W-Bk1Wtxvm1zu0";
 const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
+const Github = "https://github.com/Guille0197";
 
 import Badge from "@/components/Badge.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
-import DownloadIcon from "@/components/icons/Download.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
 import SocialPill from "@/components/SocialPill.astro";
 import TypewriterEffect from "./TypewriterEffect.astro";
 ---
@@ -21,7 +22,7 @@ import TypewriterEffect from "./TypewriterEffect.astro";
       class="md:hover:scale-105"
     >
       <img
-        class="rounded-full shadow-lg size-20"
+        class="rounded-full shadow-2xl size-20"
         src={imageUrl}
         alt={altText}
       />
@@ -42,18 +43,15 @@ import TypewriterEffect from "./TypewriterEffect.astro";
   </h1>
   <TypewriterEffect />
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-blue-200 [&>strong]:text-blue-600 [&>strong]:font-semibold dark:text-gray-300 text-balance"
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-sky-500 [&>strong]:text-sky-500 [&>strong]:font-semibold dark:text-gray-300 text-balance"
   >
     Con <strong>+4 años</strong> de experiencia. Especializado en el desarrollo de
-    <strong>aplicaciones web</strong> y <strong>móviles</strong> únicas. Desde Panamá
-    🇵🇦.
+    <strong>aplicaciones web</strong> y <strong>móviles híbridas</strong>.
+    <br />
+    Desde Panamá 🇵🇦
   </p>
 
-  <nav class="flex gap-3 mt-8 flex-nowrap">
-    <SocialPill>
-      <DownloadIcon class="size-4" />
-      CV
-    </SocialPill>
+  <nav class="flex gap-1 sm:gap-1 md:gap-3 mt-8 flex-nowrap sm:flex-wrap">
     <SocialPill href="mailto:gnavarro0197@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
@@ -61,6 +59,10 @@ import TypewriterEffect from "./TypewriterEffect.astro";
     <SocialPill href={linkedin}>
       <LinkedInIcon class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href={Github}>
+      <GitHubIcon class="size-4" />
+      GitHub
     </SocialPill>
   </nav>
 </div>

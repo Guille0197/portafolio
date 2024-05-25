@@ -1,4 +1,6 @@
 ---
+import DownloadIcon from "@/components/icons/Download.astro";
+
 const personalImageAlt = "Guillermo Navarro - Software Developer";
 ---
 
@@ -6,11 +8,11 @@ const personalImageAlt = "Guillermo Navarro - Software Developer";
   class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
 >
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-blue-400 dark:[&>p>strong]:text-blue-400 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="[&>p]:mb-4 [&>p>strong]:text-sky-500 dark:[&>p>strong]:text-sky-500 [&>p>strong]:font-bold [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
       ¡Hola! 👋 Soy <strong class="font-bold">Guillermo Navarro</strong>,
-      desarrollador web y móvil apasionado con +4 años de experiencia creando
+      desarrollador web y móvil híbrido. Con +4 años de experiencia creando
       aplicaciones empresariales innovadoras. <br /> Me especializo en tecnologías
       como React.js y Angular para el
       <strong class="font-bold">front-end</strong>, y también tengo sólidos
@@ -38,7 +40,33 @@ const personalImageAlt = "Guillermo Navarro - Software Developer";
     height="200"
     src="/gan01_97.webp"
     alt={personalImageAlt}
-    class="hover:scale-105 order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-blue-300 dark:bg-blue-300 ring-1 ring-blue-400/60 dark:ring-blue-300/60 shadow-2xl transition duration-700 ease-in-out"
+    class="hover:scale-105 order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-sky-500 dark:bg-sky-500 ring-1 ring-blue-500 dark:ring-sky-500 shadow-2xl transition duration-700 ease-in-out"
     style="object-position: 50% 50%"
   />
 </article>
+
+<!-- Boton CV -->
+<div class="flex justify-center">
+  <a
+    href="https://print-portfolio.vercel.app/"
+    target="_blank"
+    rel="noopener"
+    class="flex items-center transition md:justify-center md:hover:scale-105"
+  >
+    <div class="flex items-center sm:w-6/12 min-w-full">
+      <span
+        class="relative inline-flex overflow-hidden w-full rounded-full p-[1px]"
+      >
+        <span
+          class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#38BDF8_0%,#0C4A6E_50%,#38BDF8_100%)]"
+        ></span>
+        <div
+          class="inline-flex items-center justify-center w-full px-3 py-2 text-base text-sky-800 bg-sky-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap font-bold"
+        >
+          <DownloadIcon class="size-5 mr-1" />
+          Descargar CV
+        </div>
+      </span>
+    </div>
+  </a>
+</div>

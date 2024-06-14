@@ -40,7 +40,7 @@ export const MY_STACK = {
     { name: "HTML", icon: HtmlIcon },
     { name: "CSS", icon: CSSIcon },
     { name: "JavaScript", icon: JavaScriptIcon },
-    { name: "ReactJS", icon: ReactIcon },
+    { name: "React.js", icon: ReactIcon },
     { name: "React Native", icon: ReactNativeIcon },
     { name: "Angular", icon: AngularIcon },
     { name: "Ionic", icon: IonicIcon },

@@ -1,0 +1,33 @@
+---
+import SocialPill from "./SocialPill.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
+---
+
+<div
+  class="w-full p-4 border border-gray-200 rounded-lg shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700 animate-[wiggle_1s_ease-in-out_infinite]"
+>
+  <h5 class="mb-2 text-3xl font-semibold text-black/80 dark:text-white">
+    ¿Tienes un proyecto en mente? <span class="text-sky-500"
+      >¡Hagámoslo realidad!</span
+    >
+  </h5>
+  <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">
+    Transformaremos tu idea en un éxito. <b>¡Contáctame para hacerlo posible!</b
+    >
+    🤩
+  </p>
+  <div
+    class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4"
+  >
+    <SocialPill href="mailto:gnavarro0197@gmail.com">
+      <MailIcon class="size-4 mr-1" />
+      Envíame un mensaje
+    </SocialPill>
+    <SocialPill href={linkedin}>
+      <LinkedInIcon class="size-4 mr-1" />
+      Conectar en LinkedIn
+    </SocialPill>
+  </div>
+</div>

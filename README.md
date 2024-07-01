@@ -1,16 +1,14 @@
+<div align="center">
+  <a href="#">
+    <img src="/public/shots-portfolio.webp" width="600" alt="Vista previa del portafolio">
+  </a>
+</div>
+
 # Portafolio
 
 ¡Hola! Bienvenido a mi portafolio en GitHub. Este repositorio alberga el código fuente y los recursos de mi portafolio personal, diseñado para mostrar mi experiencia, proyectos y habilidades como desarrollador web.
 
 Inspirado en el [porfolio.dev](https://porfolio.dev/) de [@midudev](https://twitter.com/midudev)
-
-## Vistas Previas
-
-<div align="center">
-  <a href="#">
-    <img src="./public/shots-porfolio.webp" width="500" alt="Vista previa del portafolio">
-  </a>
-</div>
 
 ## Acerca de
 

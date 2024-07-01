@@ -30,7 +30,7 @@ import PNPMIcon from "@/components/icons/stack/tools/PNPM.astro";
 import VercelIcon from "@/components/icons/stack/tools/Vercel.astro";
 // Learning
 import PythonIcon from "@/components/icons/stack/learning/Python.astro";
-import AstroIcon from "@/components/icons/stack/learning/Astro.astro";
+import AstroIcon from "@/components/icons/stack/learning/Astros.astro";
 import AWSIcon from "@/components/icons/stack/learning/AWS.astro";
 import AWSLambdaIcon from "@/components/icons/stack/learning/AWSLambda.astro";
 import DockerIcon from "@/components/icons/stack/learning/Docker.astro";

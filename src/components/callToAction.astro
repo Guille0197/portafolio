@@ -1,12 +1,12 @@
 ---
 import SocialPill from "./SocialPill.astro";
 import MailIcon from "@/components/icons/Mail.astro";
-import LinkedInIcon from "@/components/icons/LinkedIn.astro";
-const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
+import PhoneIcon from "@/components/icons/Phone.astro";
+const call = "https://cal.com/guillermo-navarro";
 ---
 
 <div
-  class="w-full p-4 border border-gray-200 rounded-lg shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700 animate-[wiggle_1s_ease-in-out_infinite]"
+  class="w-full p-4 border border-sky-500 rounded-lg shadow-lg sm:p-8 dark:bg-gray-800 dark:border-sky-500 animate-[wiggle_1s_ease-in-out_infinite]"
 >
   <h5 class="mb-2 text-3xl font-semibold text-black/80 dark:text-white">
     ¿Tienes un proyecto en mente? <span class="text-sky-500"
@@ -26,14 +26,14 @@ const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
       target="_blank"
       rel="noopener noreferrer"
       role="link"
-      class="inline-flex items-center justify-center py-2 px-4 md:py-1 text-white transition bg-sky-500 border border-sky-500 rounded-full dark:bg-sky-500 dark:text-white focus-visible:ring-sky-600/80 text-md hover:bg-sky-600 hover:text-white dark:hover:bg-sky-600 dark:hover:text-white group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black hover:scale-105"
+      class="inline-flex items-center justify-center py-2 px-4 md:py-1.5 text-white transition bg-sky-500 border border-sky-500 rounded-full dark:bg-sky-500 dark:text-white focus-visible:ring-sky-600/80 text-md hover:bg-sky-600 hover:text-white dark:hover:bg-sky-600 dark:hover:text-white group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black hover:scale-105"
     >
       <MailIcon class="size-4 mr-1" />
       Envíame un mensaje
     </a>
-    <SocialPill href={linkedin}>
-      <LinkedInIcon class="size-4 mr-1" />
-      Conectar en LinkedIn
+    <SocialPill href={call}>
+      <PhoneIcon class="size-4 mr-1" />
+      Agenda una llamada
     </SocialPill>
   </div>
 </div>

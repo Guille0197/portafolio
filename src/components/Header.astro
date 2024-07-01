@@ -21,6 +21,7 @@ const navItems = [
     title: "Contacto",
     label: "contacto",
     url: "mailto:gnavarro0197@gmail.com",
+    target: "_blank",
   },
 ];
 ---
@@ -37,6 +38,7 @@ const navItems = [
           class="relative block px-2 py-2 transition hover:text-sky-500 dark:hover:text-sky-500"
           aria-label={link.label}
           href={link.url}
+          target={link.target}
         >
           {link.title}
         </a>

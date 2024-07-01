@@ -1,8 +1,6 @@
 ---
 import SunIcon from "./icons/Sun.astro";
 import MoonIcon from "./icons/Moon.astro";
-
-const THEMES = ["light", "dark"];
 ---
 
 <div class="relative ml-1 mr-1">
@@ -34,31 +32,24 @@ const THEMES = ["light", "dark"];
   }
 </style>
 
-<script is:inline>
-  const THEMES = ["light", "dark"];
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-
+<script>
   const getThemePreference = () => {
-    if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("theme") ?? "system";
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
     }
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
   };
 
-  const updateIcon = (theme) => {
+  const updateIcon = (theme: any) => {
     document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
-      element.classList.remove("active");
-      if (element.id === theme) {
-        element.classList.add("active");
-      }
+      element.classList.toggle("active", element.id === theme);
     });
   };
 
-  const updateTheme = (theme) => {
-    const isDark = theme === "dark";
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  const updateTheme = (theme: any) => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
     updateIcon(theme);
   };
 
@@ -69,11 +60,15 @@ const THEMES = ["light", "dark"];
     updateTheme(newTheme);
   };
 
-  const initialTheme = getThemePreference();
-  updateTheme(initialTheme);
+  document.addEventListener("DOMContentLoaded", () => {
+    const initialTheme = getThemePreference();
+    updateTheme(initialTheme);
 
-  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggleTheme();
+    document
+      .getElementById("theme-toggle-btn")!
+      .addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleTheme();
+      });
   });
 </script>

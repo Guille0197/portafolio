@@ -6,7 +6,7 @@
 
 # Portafolio
 
-¡Hola! Bienvenido a mi portafolio en GitHub. Este repositorio alberga el código fuente y los recursos de mi portafolio personal, diseñado para mostrar mi experiencia, proyectos y habilidades como desarrollador web.
+¡Hola! Bienvenido a mi [portafolio](https://guille0197.github.io/portafolio/) en GitHub. Este repositorio alberga el código fuente y los recursos de mi portafolio personal, diseñado para mostrar mi experiencia, proyectos y habilidades como desarrollador web.
 
 Inspirado en el [porfolio.dev](https://porfolio.dev/) de [@midudev](https://twitter.com/midudev)
 

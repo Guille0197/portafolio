@@ -31,22 +31,6 @@ jobs:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
         # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-      - name: Setup pnpm
-        # You may pin to the exact commit or the version.
-        # uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
-        uses: pnpm/action-setup@v4.0.0
-        with:
-          # Version of pnpm to install
-          version: # optional
-          # Where to store pnpm files
-          dest: # optional, default is ~/setup-pnpm
-          # If specified, run `pnpm install`
-          run_install: # optional, default is null
-          # File path to the package.json to read "packageManager" configuration
-          package_json_file: # optional, default is package.json
-          # When set to true, @pnpm/exe, which is a Node.js bundled package, will be installed, enabling using pnpm without Node.js.
-          standalone: # optional, default is false
-
   deploy:
     needs: build
     runs-on: ubuntu-latest

@@ -7,5 +7,6 @@ import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), robotsTxt(), astroMetaTags()],
-  site: "#", //TODO: Replace URL
+  site: "https://guille0197.github.io",
+  base: "/portafolio",
 });

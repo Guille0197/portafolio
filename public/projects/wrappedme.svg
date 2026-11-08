@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="610" viewBox="0 0 1000 610" role="img" aria-label="WrappedMe iOS app visual concept">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#261357"/><stop offset=".55" stop-color="#41256d"/><stop offset="1" stop-color="#0a193d"/></linearGradient>
+<linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffab92"/><stop offset=".5" stop-color="#ef6eb6"/><stop offset="1" stop-color="#8460e5"/></linearGradient>
+<linearGradient id="q" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffde99"/><stop offset="1" stop-color="#ff719b"/></linearGradient>
+<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="30"/></filter>
+</defs>
+<rect width="1000" height="610" fill="url(#bg)"/>
+<ellipse cx="750" cy="170" rx="280" ry="210" fill="#ec64be" opacity=".24" filter="url(#shadow)"/>
+<ellipse cx="140" cy="500" rx="320" ry="190" fill="#597ce9" opacity=".23" filter="url(#shadow)"/>
+<g opacity=".1" stroke="#fff"><path d="M30 100H970M30 200H970M30 300H970M30 400H970M30 500H970"/><path d="M100 0V610M300 0V610M500 0V610M700 0V610M900 0V610"/></g>
+<g transform="translate(100 86)">
+<text x="0" y="26" font-family="Arial,sans-serif" font-size="21" fill="#e2c7ff" letter-spacing="3">CAMERA ROLL STORIES</text>
+<text x="-4" y="118" font-family="Arial,sans-serif" font-size="79" font-weight="800" fill="#fff">Wrapped</text>
+<text x="334" y="118" font-family="Arial,sans-serif" font-size="79" font-weight="800" fill="#ffa6d8">Me</text>
+<text x="1" y="175" font-family="Arial,sans-serif" font-size="25" fill="#e9d3fa">Your memories. Your story.</text>
+<rect y="220" width="285" height="46" rx="23" fill="#ffffff" opacity=".16"/>
+<text x="24" y="250" fill="#fff" font-family="Arial,sans-serif" font-size="18" font-weight="700">iOS · On-device AI</text>
+</g>
+<g transform="translate(615 28) rotate(8 165 275)">
+<rect width="315" height="553" rx="50" fill="#090b17" stroke="#7c65b2" stroke-width="7"/>
+<rect x="10" y="10" width="295" height="533" rx="42" fill="url(#p)"/>
+<rect x="104" y="15" width="108" height="28" rx="14" fill="#090b17"/>
+<circle cx="252" cy="107" r="56" fill="url(#q)" opacity=".86"/>
+<circle cx="90" cy="205" r="70" fill="#fdd1ca" opacity=".4"/>
+<rect x="35" y="85" width="245" height="310" rx="30" fill="#3b245a" opacity=".25"/>
+<text x="40" y="153" fill="#fff" font-family="Arial,sans-serif" font-size="19" font-weight="700">MY YEAR IN PHOTOS</text>
+<text x="40" y="230" fill="#fff" font-family="Arial,sans-serif" font-size="70" font-weight="900">2026</text>
+<text x="42" y="273" fill="#fff" font-family="Arial,sans-serif" font-size="20">A year worth remembering.</text>
+<g fill="#fff" opacity=".93"><rect x="44" y="309" width="68" height="56" rx="12"/><rect x="125" y="309" width="68" height="56" rx="12"/><rect x="206" y="309" width="68" height="56" rx="12"/></g>
+<g fill="#3a246b" font-family="Arial,sans-serif" font-size="15" font-weight="700"><text x="61" y="342">365</text><text x="141" y="342">AI</text><text x="219" y="342">100%</text></g>
+<rect x="40" y="418" width="235" height="50" rx="25" fill="#fff"/>
+<text x="102" y="449" fill="#522870" font-family="Arial,sans-serif" font-size="18" font-weight="800">My Wrapped ↗</text>
+</g>
+<text x="102" y="552" font-family="Arial,sans-serif" font-size="18" fill="#d4bfe6">Private by design  ·  Powered by Apple intelligence</text>
+</svg>

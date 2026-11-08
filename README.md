@@ -1,37 +1,27 @@
-<div align="center">
-  <a href="#">
-    <img src="/public/shots-portfolio.webp" width="600" alt="Vista previa del portafolio">
-  </a>
-</div>
+# Guillermo Navarro — Personal Portfolio
 
-# Portafolio
+Bilingual, dark-first software engineering portfolio, powered by Astro 7.
 
-¡Hola! Bienvenido a mi [portafolio](https://guille0197.github.io/portafolio/) en GitHub. Este repositorio alberga el código fuente y los recursos de mi portafolio personal, diseñado para mostrar mi experiencia, proyectos y habilidades como desarrollador web.
+- English (default): https://guille0197.github.io/portafolio/
+- Español: https://guille0197.github.io/portafolio/es/
+- Projects: [Panaloyal](https://panaloyal.com/) and [WrappedMe for iOS](https://apps.apple.com/us/app/camera-roll-stories-wrappedme/id6790265801)
+- Contact: [LinkedIn](https://www.linkedin.com/in/guillermo-antonio-navarro/)
 
-Inspirado en el [porfolio.dev](https://porfolio.dev/) de [@midudev](https://twitter.com/midudev)
+## Development
 
-## Acerca de
+Requires Node.js 22.23.4+.
 
-Este portafolio está creado con el objetivo de destacar mis proyectos más recientes, así como proporcionar información detallada sobre mi trayectoria profesional y habilidades técnicas.
+```bash
+npm install
+npm run check
+npm run build
+npm run dev
+```
 
-## Características
+The redesign uses Astro and native CSS, without an outdated Tailwind integration or client-side framework. Bilingual content lives in `src/data/content.ts`. GitHub Actions builds and publishes to GitHub Pages on `main`.
 
-- **Diseño Responsivo**: Adaptable a diferentes dispositivos y tamaños de pantalla.
-- **Proyectos Destacados**: Muestra una selección de proyectos significativos.
-- **Información Personal**: Detalles sobre mi formación académica, habilidades técnicas y experiencia laboral.
-- **Contacto**: Formas de conectarse conmigo a través de correo electrónico y redes sociales.
+AI-related harnesses, security, MCP, and software development methodologies are explicitly listed as learning interests, not claimed as professional expertise.
 
-## Tecnologías Utilizadas
+## Credits
 
-- HTML5, CSS3, JavaScript
-- ![Astro Badge](https://img.shields.io/badge/Astro-FF3E00?logo=astro&logoColor=fff&style=flat)
-- ![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
-
-## Contacto
-
-Si deseas saber más sobre mí o colaborar en algún proyecto, no dudes en contactarme:
-
-- Email: [Correo](mailto:gnavarro0197@gmail.com)
-- LinkedIn: [Perfil](https://www.linkedin.com/in/guillermo-antonio-navarro/)
-
-¡Gracias por visitar mi portafolio!
+The original portfolio was inspired by [porfolio.dev](https://porfolio.dev/) by [midudev](https://github.com/midudev).

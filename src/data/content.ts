@@ -3,7 +3,7 @@ export const content = {
   en: {
     nav: ["Work", "Experience", "About", "Expertise", "Contact"],
     greeting: "6+ YEARS IN SOFTWARE ENGINEERING · PANAMA",
-    headline: ["Full Stack Software Engineer", "Building banking apps at scale and wallet-native SaaS."],
+    headline: ["Full Stack Software Engineer", "Banking, SaaS & applied AI."],
     intro: "I build web and mobile software for financial services, develop cloud-backed APIs, and turn ideas into products. With 6+ years of engineering experience, I also build independent SaaS and explore applied AI.",
     location: "Panama City · UTC−5 (EST year-round) · Open to remote full-time roles",
     explore: "Explore my work", connect: "Let's connect", status: "Open to opportunities",
@@ -34,7 +34,7 @@ export const content = {
   es: {
     nav:["Proyectos","Experiencia","Sobre mí","Tecnologías","Contacto"],
     greeting:"6+ AÑOS EN INGENIERÍA DE SOFTWARE · PANAMÁ",
-    headline:["Ingeniero de Software Full Stack","Desarrollo banca móvil a escala y productos SaaS nativos de Wallet."],
+    headline:["Ingeniero de Software Full Stack","Banca móvil, SaaS e IA aplicada."],
     intro:"Desarrollo software web y móvil para servicios financieros, integro APIs en la nube y convierto ideas en productos. Tengo más de 6 años de experiencia y también construyo productos SaaS y exploro la IA aplicada.",
     location:"Ciudad de Panamá · UTC−5 todo el año · Abierto a empleos remotos de tiempo completo",
     explore:"Ver proyectos",connect:"Conectemos",status:"Abierto a oportunidades",

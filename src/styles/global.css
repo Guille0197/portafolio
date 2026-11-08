@@ -91,3 +91,6 @@
   .hero-copy h1 .gradient{font-size:.87em}
 }
 @media(max-width:360px){.identity-name{display:none}.topbar-inner{gap:5px}.hero .actions .btn{font-size:11px!important}.hero-graphic .orbit{width:270px;height:270px}}
+
+/* External professional profiles */
+.professional-profiles{margin-top:64px;padding-top:24px;border-top:1px solid #203149}.profile-section-title{margin-bottom:20px}.profile-section-title h2{font-size:clamp(20px,2.2vw,27px);letter-spacing:-.035em;margin:8px 0 0;color:#edf5ff}.profile-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.profile-link{display:flex;align-items:center;gap:15px;padding:19px 20px;background:#101e32;border:1px solid #29415e;border-radius:14px;text-decoration:none;color:#edf5ff;transition:background .2s,border-color .2s,transform .2s}.profile-link:hover{background:#162b46;border-color:#58a6ee;transform:translateY(-2px)}.profile-link img{width:34px;height:34px;object-fit:contain;flex-shrink:0}.profile-link>span:nth-child(2){display:flex;flex-direction:column;gap:4px;min-width:0}.profile-link strong{font-size:15px}.profile-link small{font-size:12px;color:#b4c8e1}.profile-arrow{margin-left:auto;font-size:19px;color:#8fcfff}.footer{margin-top:32px}@media(max-width:600px){.professional-profiles{margin-top:42px}.profile-links{grid-template-columns:1fr;gap:10px}.profile-link{padding:16px}}

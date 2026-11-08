@@ -1,6 +1,7 @@
 ---
 import { content, type Language } from "../data/content";
 import { caseStudies } from "../data/caseStudies";
+import ZipGame from "./ZipGame.astro";
 import "../styles/global.css";
 interface Props { lang: Language }
 const { lang } = Astro.props;
@@ -78,6 +79,7 @@ const ids = ["projects","experience","about","stack","contact"];
         </article>)}
       </div>
     </section>
+    <ZipGame lang={lang} />
     <section id="experience" class="section container">
       <div class="section-intro"><div><p class="kicker">02 / CAREER</p><h2>{t.section[1]}</h2></div><p>{t.sectionDescriptions[1]}</p></div>
       <div class="career">{t.jobs.map(job=><article class="job"><div class="job-date">{job.dates}</div><div class="job-details"><h3>{job.role}</h3><p class="company">{job.company}</p><p>{job.desc}</p>{"highlights" in job && <ul class="job-highlights">{job.highlights.map(line=><li>{line}</li>)}</ul>}<ul class="tags">{job.tags.map(tag=><li>{tag}</li>)}</ul></div></article>)}</div>

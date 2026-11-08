@@ -22,9 +22,9 @@ export const content = {
     ],
     about:["I'm a software engineer who enjoys turning complex problems into simple, useful digital products. My work spans enterprise systems, frontend engineering, backend integrations, and AWS cloud services.","Outside my day job I build independent SaaS products, experiment with automation, and explore AI-assisted engineering. I value thoughtful architecture, dependable delivery, and continuous learning."],
     skills:[
-      {title:"Frontend",items:["TypeScript","JavaScript","React","Angular","Ionic","HTML & CSS"]},
-      {title:"Backend & data",items:["Node.js","Java","Spring Boot","C# / .NET","REST APIs","SQL"]},
-      {title:"Cloud & DevOps",items:["AWS","API Gateway","S3","Fargate","CloudFormation","CI/CD","Docker"]},
+      {title:"Frontend",items:["TypeScript","JavaScript","React","Angular","Ionic","HTML & CSS","Figma"]},
+      {title:"Backend & data",items:["Node.js","Java","Spring Boot","C# / .NET","REST APIs","SQL","PostgreSQL","Python"]},
+      {title:"Cloud & DevOps",items:["AWS","API Gateway","S3","Fargate","CloudFormation","AWS Lambda","Vercel","Dokploy","CI/CD","Docker"]},
       {title:"Currently exploring · AI",items:["AI-assisted software factories","Specification-Driven Development (SDD)","AI-assisted development workflows","Claude Code harness (subagents, skills, commands, hooks & rules)","Agent harnesses","Local LLMs","Model Context Protocol (MCP)","Agent security & guardrails","AI automation","AI integrations"]}
     ],
     aboutLink:"See my GitHub",email:"Email me",footer:"Built with Astro. Designed with purpose.",
@@ -53,9 +53,9 @@ export const content = {
     ],
     about:["Soy ingeniero de software y disfruto convertir problemas complejos en productos digitales útiles. Mi experiencia abarca sistemas empresariales, frontend, integraciones backend y servicios AWS.","Fuera del trabajo desarrollo productos SaaS propios, experimento con automatización y exploro la ingeniería asistida por IA. Me interesa la buena arquitectura, la entrega confiable y seguir aprendiendo."],
     skills:[
-      {title:"Frontend",items:["TypeScript","JavaScript","React","Angular","Ionic","HTML y CSS"]},
-      {title:"Backend y datos",items:["Node.js","Java","Spring Boot","C# / .NET","APIs REST","SQL"]},
-      {title:"Cloud y DevOps",items:["AWS","API Gateway","S3","Fargate","CloudFormation","CI/CD","Docker"]},
+      {title:"Frontend",items:["TypeScript","JavaScript","React","Angular","Ionic","HTML y CSS","Figma"]},
+      {title:"Backend y datos",items:["Node.js","Java","Spring Boot","C# / .NET","APIs REST","SQL","PostgreSQL","Python"]},
+      {title:"Cloud y DevOps",items:["AWS","API Gateway","S3","Fargate","CloudFormation","AWS Lambda","Vercel","Dokploy","CI/CD","Docker"]},
       {title:"Actualmente aprendiendo · IA",items:["Software factories asistidas por IA","Specification-Driven Development (SDD)","Flujos de desarrollo asistido por IA","Claude Code (subagentes, skills, comandos, hooks y reglas)","Agent harnesses","Modelos LLM locales","Model Context Protocol (MCP)","Seguridad y guardrails de agentes","Automatización con IA","Integraciones con IA"]}
     ],
     aboutLink:"Ver mi GitHub",email:"Enviarme un correo",footer:"Creado con Astro. Diseñado con intención.",

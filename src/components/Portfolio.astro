@@ -79,21 +79,21 @@ const ids = ["projects","experience","about","stack","contact"];
         </article>)}
       </div>
     </section>
-    <ZipGame lang={lang} />
     <section id="experience" class="section container">
       <div class="section-intro"><div><p class="kicker">02 / CAREER</p><h2>{t.section[1]}</h2></div><p>{t.sectionDescriptions[1]}</p></div>
       <div class="career">{t.jobs.map(job=><article class="job"><div class="job-date">{job.dates}</div><div class="job-details"><h3>{job.role}</h3><p class="company">{job.company}</p><p>{job.desc}</p>{"highlights" in job && <ul class="job-highlights">{job.highlights.map(line=><li>{line}</li>)}</ul>}<ul class="tags">{job.tags.map(tag=><li>{tag}</li>)}</ul></div></article>)}</div>
     </section>
+    <ZipGame lang={lang} />
     <section id="about" class="section container about">
       <div class="about-photo"><img src={base + "gan01_97.webp"} loading="lazy" width="360" height="360" alt="Guillermo Navarro" /></div>
-      <div><p class="kicker">03 / STORY</p><h2>{t.section[2]}</h2><p class="about-tagline">{t.sectionDescriptions[2]}</p>{t.about.map(paragraph=><p class="about-body">{paragraph}</p>)}<a class="more" href={github} target="_blank" rel="noopener noreferrer">{t.aboutLink} ↗</a><a class="btn resume-btn story-resume" href={base + "Guillermo_Navarro_FullStack_CV_en.pdf"} download="Guillermo_Navarro_FullStack_CV_en.pdf">{lang === "en" ? "Download Resume ↓" : "Descargar CV ↓"}</a></div>
+      <div><p class="kicker">04 / STORY</p><h2>{t.section[2]}</h2><p class="about-tagline">{t.sectionDescriptions[2]}</p>{t.about.map(paragraph=><p class="about-body">{paragraph}</p>)}<a class="more" href={github} target="_blank" rel="noopener noreferrer">{t.aboutLink} ↗</a><a class="btn resume-btn story-resume" href={base + "Guillermo_Navarro_FullStack_CV_en.pdf"} download="Guillermo_Navarro_FullStack_CV_en.pdf">{lang === "en" ? "Download Resume ↓" : "Descargar CV ↓"}</a></div>
     </section>
     <section id="stack" class="section container">
-      <div class="section-intro"><div><p class="kicker">04 / TOOLKIT</p><h2>{t.section[3]}</h2></div><p>{t.sectionDescriptions[3]}</p></div>
+      <div class="section-intro"><div><p class="kicker">05 / TOOLKIT</p><h2>{t.section[3]}</h2></div><p>{t.sectionDescriptions[3]}</p></div>
       <div class="toolkit">{t.skills.map((group,i)=><article class:list={["skill-card",i===3 && "ai-card"]}><div class="skill-heading"><span class="skill-number">0{i+1}</span><h3>{group.title}</h3></div><div class="skills">{group.items.map(item=><span>{item}</span>)}</div></article>)}</div>
     </section>
     <section id="contact" class="container contact-section">
-      <div class="contact-panel"><div><p class="kicker">05 / CONTACT</p><h2>{t.section[4]}</h2><p>{t.sectionDescriptions[4]}</p></div><div class="actions"><a class="btn primary" href="mailto:gnavarro0197@gmail.com">{t.email} ↗</a><a class="btn secondary" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+      <div class="contact-panel"><div><p class="kicker">06 / CONTACT</p><h2>{t.section[4]}</h2><p>{t.sectionDescriptions[4]}</p></div><div class="actions"><a class="btn primary" href="mailto:gnavarro0197@gmail.com">{t.email} ↗</a><a class="btn secondary" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
     </section>
   </main>
   <section class="container professional-profiles" aria-label={lang === "en" ? "More professional profiles" : "Más perfiles profesionales"}>

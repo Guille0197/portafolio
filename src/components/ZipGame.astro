@@ -48,7 +48,8 @@ const en = lang === "en";
     const markers = [0, 6, 12, 18, 24];
     let level = 0;
     let path: number[] = [];
-    let dragging = false;
+    let activePointer: number | null = null;
+    let lastPoint: { x: number; y: number } | null = null;
     let solved = false;
     let cells: HTMLButtonElement[] = [];
     const isAdjacent = (a: number, b: number) => Math.abs(Math.floor(a / size) - Math.floor(b / size)) + Math.abs(a % size - b % size) === 1;
@@ -65,9 +66,7 @@ const en = lang === "en";
         const checkpoint = checkpoints.get(i);
         cell.setAttribute("aria-label", (en ? "Row " : "Fila ") + (Math.floor(i / size) + 1) + (en ? ", column " : ", columna ") + (i % size + 1) + (checkpoint ? ", " + (en ? "checkpoint " : "punto ") + checkpoint : ""));
         if (checkpoint) { const dot = document.createElement("span"); dot.className = "zip-number"; dot.textContent = String(checkpoint); cell.append(dot); }
-        cell.addEventListener("click", () => advance(i));
-        cell.addEventListener("pointerdown", (event) => { if (event.pointerType !== "mouse" || event.button === 0) { dragging = true; advance(i); } });
-        cell.addEventListener("pointerenter", () => { if (dragging) advance(i); });
+        cell.addEventListener("click", (event) => { if (event.detail === 0) advance(i); });
         board.append(cell);
         cells.push(cell);
       }
@@ -108,7 +107,7 @@ const en = lang === "en";
       } else message("Keep going — fill every square.", "Continúa: recorre todas las casillas.");
       update();
     }
-    function start() { path = [route()[0]]; solved = false; message("Start at 1. Drag or tap adjacent cells.", "Empieza en el 1. Arrastra o toca las casillas vecinas."); render(); }
+    function start() { if (activePointer !== null && board.hasPointerCapture(activePointer)) board.releasePointerCapture(activePointer); activePointer = null; lastPoint = null; path = [route()[0]]; solved = false; message("Start at 1. Drag or tap adjacent cells.", "Empieza en el 1. Arrastra o toca las casillas vecinas."); render(); }
     reset.addEventListener("click", start);
     undo.addEventListener("click", () => { if (path.length > 1 && !solved) { path.pop(); update(); } });
     hint.addEventListener("click", () => {
@@ -120,14 +119,58 @@ const en = lang === "en";
       message("The glowing square is your next step.", "La casilla iluminada es tu siguiente paso.");
     });
     next.addEventListener("click", () => { level = (level + 1) % routes.length; start(); });
-    board.addEventListener("pointermove", event => {
-      if (!dragging) return;
-      const hit = document.elementFromPoint(event.clientX, event.clientY);
-      const cell = hit?.closest<HTMLButtonElement>(".zip-cell");
-      if (cell && board.contains(cell)) advance(cells.indexOf(cell));
+    // Capture the active pointer on the board, so a held mouse button or finger
+    // continues drawing even while moving across child buttons.
+    function cellAt(x: number, y: number): number {
+      const rect = board.getBoundingClientRect();
+      if (x < rect.left || x >= rect.right || y < rect.top || y >= rect.bottom) return -1;
+      const col = Math.min(size - 1, Math.floor((x - rect.left) / rect.width * size));
+      const row = Math.min(size - 1, Math.floor((y - rect.top) / rect.height * size));
+      return row * size + col;
+    }
+    function traceTo(x: number, y: number) {
+      const previous = lastPoint;
+      // Sample between pointer events to avoid skipping cells during fast drags.
+      const distance = previous ? Math.hypot(x - previous.x, y - previous.y) : 0;
+      const stepSize = Math.max(4, board.getBoundingClientRect().width / (size * 4));
+      const steps = Math.max(1, Math.ceil(distance / stepSize));
+      for (let n = 1; n <= steps; n++) {
+        const px = previous ? previous.x + (x - previous.x) * n / steps : x;
+        const py = previous ? previous.y + (y - previous.y) * n / steps : y;
+        const index = cellAt(px, py);
+        if (index >= 0) advance(index);
+      }
+      lastPoint = { x, y };
+    }
+    board.addEventListener("pointerdown", event => {
+      if (activePointer !== null || (event.pointerType === "mouse" && event.button !== 0)) return;
+      const index = cellAt(event.clientX, event.clientY);
+      // Start on the first checkpoint, or resume from the current path endpoint.
+      if (index !== path[0] && index !== path[path.length - 1]) return;
+      activePointer = event.pointerId;
+      lastPoint = { x: event.clientX, y: event.clientY };
+      board.setPointerCapture(event.pointerId);
+      event.preventDefault();
     });
-    window.addEventListener("pointerup", () => { dragging = false; });
-    window.addEventListener("pointercancel", () => { dragging = false; });
+    board.addEventListener("pointermove", event => {
+      if (event.pointerId !== activePointer) return;
+      if (event.pointerType === "mouse" && (event.buttons & 1) === 0) {
+        activePointer = null; lastPoint = null; return;
+      }
+      traceTo(event.clientX, event.clientY);
+      event.preventDefault();
+    });
+    const stopTracing = (event: PointerEvent) => {
+      if (event.pointerId !== activePointer) return;
+      activePointer = null;
+      lastPoint = null;
+      if (board.hasPointerCapture(event.pointerId)) board.releasePointerCapture(event.pointerId);
+    };
+    board.addEventListener("pointerup", stopTracing);
+    board.addEventListener("pointercancel", stopTracing);
+    board.addEventListener("lostpointercapture", event => {
+      if (event.pointerId === activePointer) { activePointer = null; lastPoint = null; }
+    });
     board.addEventListener("keydown", event => {
       const key = event.key;
       const current = path[path.length - 1];

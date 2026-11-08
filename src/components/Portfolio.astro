@@ -12,7 +12,8 @@ const other = lang === "en" ? base + "es/" : base;
 const canonical = new URL(current, Astro.site).toString();
 const enUrl = new URL(base, Astro.site).toString();
 const esUrl = new URL(base + "es/", Astro.site).toString();
-const profilePhoto = "https://media.licdn.com/dms/image/v2/D4E03AQEFfnWVy0NTkA/profile-displayphoto-scale_400_400/B4EZknNaq6GcAg-/0/1757299453330?e=1795651200&v=beta&t=eSnQswJQ2QLwijBlM3IEc656dLBJxY-bk7VwmtheLIw";
+const profilePhoto = base + "gan01_97.webp";
+const ogImage = new URL(base + "og-cover.svg", Astro.site).toString();
 const github = "https://github.com/Guille0197";
 const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
 const ids = ["projects","experience","about","stack","contact"];
@@ -29,7 +30,10 @@ const ids = ["projects","experience","about","stack","contact"];
   <meta property="og:title" content={t.seoTitle} />
   <meta property="og:description" content={t.seoDescription} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={profilePhoto} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content={ogImage} />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href={canonical} />
   <link rel="alternate" hreflang="en" href={enUrl} />

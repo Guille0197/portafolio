@@ -34,3 +34,6 @@
 
 /* Cleaner editorial hero: typography instead of technology cards */
 .hero-stack{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:19px 0 3px;color:#9bbbd6;font-size:13px;font-weight:600;letter-spacing:.01em}.hero-stack span{color:#3d729b;font-weight:400}.hero h1{max-width:760px}.hero-copy .intro{max-width:570px}@media(max-width:700px){.hero-stack{font-size:12px;gap:7px;margin-top:16px}.hero h1{overflow-wrap:normal}}
+
+/* Recruiter-first evidence metrics */
+.stats .stat{align-items:flex-start;gap:13px}.stats .stat strong{font-size:clamp(27px,3vw,36px);line-height:1.1}.stats .stat span{max-width:210px;line-height:1.5}.hero .location{line-height:1.6}@media(max-width:700px){.stats{gap:12px}.stats .stat strong{font-size:25px}.stats .stat span{font-size:11px}.hero .location{font-size:12px}}

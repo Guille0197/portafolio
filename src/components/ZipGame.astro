@@ -6,7 +6,7 @@ const en = lang === "en";
 <section id="playground" class="section container zip-section" aria-label={en ? "Interactive logic game" : "Juego de lógica interactivo"}>
   <div class="section-intro zip-intro">
     <div><p class="kicker">06 / PLAYGROUND</p><h2>{en ? "Take a little break." : "Tómate un pequeño descanso."}</h2></div>
-    <p>{en ? "A tiny logic puzzle, built with TypeScript. Connect the numbers in order and fill every square." : "Un pequeño reto de lógica, creado con TypeScript. Conecta los números en orden y recorre todas las casillas."}</p>
+    <p>{en ? "Three logic challenges with walls and winding paths. Connect the numbers in order and fill every square." : "Tres retos de lógica con muros y caminos sinuosos. Conecta los números en orden y recorre todas las casillas."}</p>
   </div>
   <div class="zip-panel" data-zip-game data-lang={lang}>
     <div class="zip-copy">
@@ -16,7 +16,7 @@ const en = lang === "en";
       <div class="zip-info"><span class="zip-level-label">{en ? "LEVEL" : "NIVEL"} <strong data-zip-level>01 / 03</strong></span><span class="zip-moves-label">{en ? "MOVES" : "MOVIMIENTOS"} <strong data-zip-moves>0</strong></span></div>
       <div class="zip-controls"><button type="button" class="zip-btn zip-reset" data-zip-reset>{en ? "↺ Restart" : "↺ Reiniciar"}</button><button type="button" class="zip-btn zip-undo" data-zip-undo disabled>{en ? "← Undo" : "← Deshacer"}</button><button type="button" class="zip-btn zip-hint" data-zip-hint>{en ? "✧ Hint" : "✧ Pista"}</button></div>
       <p class="zip-feedback" data-zip-feedback role="status" aria-live="polite">{en ? "Start at 1. Drag or tap adjacent cells." : "Empieza en el 1. Arrastra o toca las casillas vecinas."}</p>
-      <div class="zip-rules"><span class="zip-rule-icon">↗</span><span>{en ? "Follow the numbers in order and visit every cell exactly once." : "Sigue los números en orden y visita cada casilla una sola vez."}</span></div>
+      <div class="zip-rules"><span class="zip-rule-icon">↗</span><span>{en ? "Connect the numbers in order. Fill every cell without crossing the walls." : "Conecta los números en orden. Recorre todas las casillas sin cruzar los muros."}</span></div>
     </div>
     <div class="zip-board-area">
       <div class="zip-board-top"><span><span class="zip-live-dot"></span> {en ? "READY TO PLAY" : "LISTO PARA JUGAR"}</span><span data-zip-progress>1 / 25</span></div>
@@ -40,11 +40,12 @@ const en = lang === "en";
     const hint = game.querySelector<HTMLButtonElement>("[data-zip-hint]")!;
     const next = game.querySelector<HTMLButtonElement>("[data-zip-next]")!;
     const size = 5;
-    const snake: number[] = [];
-    for (let r = 0; r < size; r++) for (let c = 0; c < size; c++) snake.push(r * size + (r % 2 === 0 ? c : size - 1 - c));
-    const flipH = (i: number) => Math.floor(i / size) * size + (size - 1 - i % size);
-    const flipV = (i: number) => (size - 1 - Math.floor(i / size)) * size + i % size;
-    const routes = [snake, snake.map(flipH), snake.map(flipV)];
+    // Every level has a verified Hamiltonian solution; walls never cross its edges.
+    const levels = [
+      { route: [0,1,2,3,4,9,14,19,24,23,22,21,20,15,16,17,18,13,8,7,12,11,6,5,10], walls: [[6,7],[10,11],[18,23],[0,5]] },
+      { route: [0,5,10,15,20,21,16,11,6,1,2,3,4,9,8,7,12,17,22,23,24,19,18,13,14], walls: [[15,16],[11,12],[17,18],[5,6],[12,13],[0,1],[21,22]] },
+      { route: [0,1,2,3,4,9,8,7,6,5,10,11,12,13,14,19,24,23,18,17,22,21,16,15,20], walls: [[16,17],[12,17],[6,11],[22,23],[1,6],[13,18],[2,7],[11,16],[3,8],[18,19]] }
+    ];
     const markers = [0, 6, 12, 18, 24];
     let level = 0;
     let path: number[] = [];
@@ -57,7 +58,8 @@ const en = lang === "en";
     const svgNS = "http://www.w3.org/2000/svg";
     const point = (i: number) => ({ x: (i % size + .5) * 100, y: (Math.floor(i / size) + .5) * 100 });
     const isAdjacent = (a: number, b: number) => Math.abs(Math.floor(a / size) - Math.floor(b / size)) + Math.abs(a % size - b % size) === 1;
-    const route = () => routes[level];
+    const route = () => levels[level].route;
+    const blocked = (a: number, b: number) => levels[level].walls.some(([x,y]) => (a === x && b === y) || (a === y && b === x));
     const message = (english: string, spanish: string) => { feedback.textContent = en ? english : spanish; };
     function render() {
       const checkpoints = new Map<number, number>(markers.map((idx, i) => [route()[idx], i + 1]));
@@ -79,6 +81,23 @@ const en = lang === "en";
       overlay.setAttribute("viewBox", "0 0 500 500");
       overlay.setAttribute("class", "zip-route-overlay");
       overlay.setAttribute("aria-hidden", "true");
+      const wallsLayer = document.createElementNS(svgNS, "g");
+      wallsLayer.setAttribute("class", "zip-walls-layer");
+      for (const [a, b] of levels[level].walls) {
+        const first = point(a);
+        const second = point(b);
+        const mx = (first.x + second.x) / 2;
+        const my = (first.y + second.y) / 2;
+        const horizontal = Math.floor(a / size) === Math.floor(b / size);
+        const wall = document.createElementNS(svgNS, "line");
+        wall.setAttribute("x1", String(horizontal ? mx : mx - 36));
+        wall.setAttribute("y1", String(horizontal ? my - 36 : my));
+        wall.setAttribute("x2", String(horizontal ? mx : mx + 36));
+        wall.setAttribute("y2", String(horizontal ? my + 36 : my));
+        wall.setAttribute("class", "zip-wall");
+        wallsLayer.append(wall);
+      }
+      overlay.append(wallsLayer);
       routeLine = document.createElementNS(svgNS, "polyline");
       routeLine.setAttribute("class", "zip-route-line");
       overlay.append(routeLine);
@@ -120,6 +139,7 @@ const en = lang === "en";
       if (solved || i === path[path.length - 1]) return;
       if (path.length > 1 && i === path[path.length - 2]) { path.pop(); update(); return; }
       if (path.includes(i) || !isAdjacent(path[path.length - 1], i)) return;
+      if (blocked(path[path.length - 1], i)) { message("A wall blocks that direction. Find another way.", "Hay un muro en esa dirección. Busca otro camino."); return; }
       const markerIndex = markers.indexOf(route().indexOf(i));
       const expected = markers.filter(index => path.includes(route()[index])).length + 1;
       if (markerIndex >= 0 && markerIndex + 1 !== expected) { message("Connect the numbers in order.", "Conecta los números en orden."); return; }
@@ -136,13 +156,13 @@ const en = lang === "en";
     undo.addEventListener("click", () => { if (path.length > 1 && !solved) { path.pop(); update(); } });
     hint.addEventListener("click", () => {
       if (solved) return;
-      const index = route().findIndex((_, i) => i === path.length - 1 && route()[i] === path[path.length - 1]);
-      const nextCell = index >= 0 ? route()[index + 1] : undefined;
+      const followsSolution = path.every((cell, i) => route()[i] === cell);
+      const nextCell = followsSolution ? route()[path.length] : undefined;
       if (nextCell === undefined) { message("Try undoing a move to find another route.", "Prueba deshacer un movimiento para encontrar otra ruta."); return; }
       cells[nextCell].classList.add("zip-hint-cell");
       message("The glowing square is your next step.", "La casilla iluminada es tu siguiente paso.");
     });
-    next.addEventListener("click", () => { level = (level + 1) % routes.length; start(); });
+    next.addEventListener("click", () => { level = (level + 1) % levels.length; start(); });
     // Capture the active pointer on the board, so a held mouse button or finger
     // continues drawing even while moving across child buttons.
     function cellAt(x: number, y: number): number {
@@ -212,6 +232,8 @@ const en = lang === "en";
   .zip-number{visibility:hidden}
   .zip-route-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:visible}
   .zip-route-line{fill:none;stroke:#39a6ef;stroke-width:25;stroke-linecap:round;stroke-linejoin:round}
+  .zip-wall{stroke:#f4ae62;stroke-width:9;stroke-linecap:round;filter:drop-shadow(0 0 4px #ef9b4a66)}
+  .zip-walls-layer{pointer-events:none}
   .zip-svg-marker{fill:#081625;stroke:#63c7ff;stroke-width:3}
   .zip-svg-marker.zip-svg-active{stroke:#6cf1b5;fill:#12382e}
   .zip-svg-label{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:23px;font-weight:800;fill:#f5faff;text-anchor:middle;dominant-baseline:central}

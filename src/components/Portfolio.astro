@@ -10,6 +10,7 @@ const other = lang === "en" ? base + "es/" : base;
 const canonical = new URL(current, Astro.site).toString();
 const enUrl = new URL(base, Astro.site).toString();
 const esUrl = new URL(base + "es/", Astro.site).toString();
+const profilePhoto = "https://media.licdn.com/dms/image/v2/D4E03AQEFfnWVy0NTkA/profile-displayphoto-scale_400_400/B4EZknNaq6GcAg-/0/1757299453330?e=1795651200&v=beta&t=eSnQswJQ2QLwijBlM3IEc656dLBJxY-bk7VwmtheLIw";
 const github = "https://github.com/Guille0197";
 const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
 const ids = ["projects","experience","about","stack","contact"];
@@ -26,7 +27,7 @@ const ids = ["projects","experience","about","stack","contact"];
   <meta property="og:title" content={t.seoTitle} />
   <meta property="og:description" content={t.seoDescription} />
   <meta property="og:url" content={canonical} />
-  <meta property="og:image" content={new URL(base + "portrait-professional-v2.jpg", Astro.site).toString()} />
+  <meta property="og:image" content={profilePhoto} />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href={canonical} />
   <link rel="alternate" hreflang="en" href={enUrl} />
@@ -50,7 +51,7 @@ const ids = ["projects","experience","about","stack","contact"];
         <p class="role-summary">{lang === "en" ? "Full Stack Developer · AWS Cloud · SaaS Builder" : "Desarrollador Full Stack · AWS Cloud · Creador SaaS"}</p><p class="intro">{t.intro}</p><div class="hero-tech" aria-label={lang === "en" ? "Core technologies" : "Tecnologías principales"}><span>TypeScript</span><span>React / Angular</span><span>Node.js</span><span>AWS</span><span>AI integrations</span></div><p class="location">⌁ {t.location}</p>
         <div class="actions"><a class="btn primary" href="#projects">{t.explore} ↗</a><a class="btn secondary" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn tertiary" href={github} target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
       </div>
-      <div class="hero-graphic"><div class="orbit"></div><div class="orbit orbit-small"></div><img class="portrait" src={base + "portrait-professional-v2.jpg"} alt="Guillermo Navarro, software engineer" width="300" height="300" fetchpriority="high" /><div class="float-card available"><span class="status-dot"></span>{t.status}</div><div class="float-card code"><span class="blue">&lt;/&gt;</span> Full Stack · AWS · AI</div></div>
+      <div class="hero-graphic"><div class="orbit"></div><div class="orbit orbit-small"></div><img class="portrait" src={profilePhoto} alt="Guillermo Navarro, software engineer" width="300" height="300" fetchpriority="high" /><div class="float-card available"><span class="status-dot"></span>{t.status}</div><div class="float-card code"><span class="blue">&lt;/&gt;</span> Full Stack · AWS · AI</div></div>
       <div class="stats">{t.stats.map(([value,label])=><div class="stat"><strong>{value}</strong><span>{label}</span></div>)}</div>
     </section>
     <section id="projects" class="section container">

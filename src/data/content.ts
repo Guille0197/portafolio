@@ -3,11 +3,11 @@ export const content = {
   en: {
     nav: ["Work", "Experience", "About", "Expertise", "Contact"],
     greeting: "6+ YEARS IN SOFTWARE ENGINEERING · PANAMA",
-    headline: ["Full Stack Software Engineer", "Banking, SaaS & applied AI."],
+    headline: ["Full Stack Software Engineer", "Building software and SaaS products."],
     intro: "I build web and mobile software for financial services, develop cloud-backed APIs, and turn ideas into products. With 6+ years of engineering experience, I also build independent SaaS and explore applied AI.",
-    location: "Panama City · UTC−5 (EST year-round) · Open to remote full-time roles",
+    location: "Panama City · UTC−5 · Open to remote full-time roles",
     explore: "Explore my work", connect: "Let's connect", status: "Open to opportunities",
-    stats: [["1M+", "Users on banking platform"], ["900", "Customers in a single loyalty program · up to"], ["6", "Languages in WrappedMe"]],
+    stats: [["1M+", "Users on banking platform"], ["900", "Customers in a single loyalty program · up to"]],
     section: ["Selected work", "Professional experience", "Beyond the code", "Technology & interests", "Let's build something meaningful."],
     sectionDescriptions: ["Products and projects that bring together engineering and business value.", "Building reliable applications in banking, insurance, and web development.", "I care about building things people actually use.", "Tools I work with, and the areas I'm actively studying.", "Interested in working together or discussing an opportunity? Reach out."],
     projects: [
@@ -34,11 +34,11 @@ export const content = {
   es: {
     nav:["Proyectos","Experiencia","Sobre mí","Tecnologías","Contacto"],
     greeting:"6+ AÑOS EN INGENIERÍA DE SOFTWARE · PANAMÁ",
-    headline:["Ingeniero de Software Full Stack","Banca móvil, SaaS e IA aplicada."],
+    headline:["Ingeniero de Software Full Stack","Creando software y productos SaaS."],
     intro:"Desarrollo software web y móvil para servicios financieros, integro APIs en la nube y convierto ideas en productos. Tengo más de 6 años de experiencia y también construyo productos SaaS y exploro la IA aplicada.",
-    location:"Ciudad de Panamá · UTC−5 todo el año · Abierto a empleos remotos de tiempo completo",
+    location:"Ciudad de Panamá · UTC−5 · Abierto a empleos remotos de tiempo completo",
     explore:"Ver proyectos",connect:"Conectemos",status:"Abierto a oportunidades",
-    stats:[["1M+","Usuarios de plataforma bancaria"],["900","Clientes en un solo programa · hasta"],["6","Idiomas en WrappedMe"]],
+    stats:[["1M+","Usuarios de plataforma bancaria"],["900","Clientes en un solo programa · hasta"]],
     section:["Proyectos destacados","Experiencia profesional","Más allá del código","Tecnologías e intereses","Construyamos algo que importe."],
     sectionDescriptions:["Productos que combinan ingeniería y valor real para los negocios.","Desarrollo de aplicaciones confiables en banca, seguros y entornos web.","Me apasiona crear soluciones que las personas realmente utilizan.","Herramientas que utilizo y áreas que estoy estudiando actualmente.","¿Te interesa colaborar o conversar sobre una oportunidad profesional? Escríbeme."],
     projects:[

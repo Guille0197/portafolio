@@ -52,3 +52,6 @@
 .projects .wrapped-featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.wrapped-featured .project-preview{min-height:290px}.wrapped-featured .project-info{padding:34px;display:flex;flex-direction:column;justify-content:center}
 .architecture-flow{display:flex;align-items:center;gap:13px;flex-wrap:wrap;padding:19px 20px;margin:18px 0 22px;border:1px solid #345477;background:#0d233c;border-radius:12px}.architecture-node{color:#e4f2ff;font-size:14px;font-weight:650}.architecture-arrow{font-size:18px;color:#64c7ff}
 @media(max-width:700px){.project-info>p:not(.micro),.job-details>p,.job-highlights li,.case-study p,.case-study li,.case-outcome p,.about-body{font-size:15px!important}.projects .wrapped-featured{display:block}.wrapped-featured .project-preview{min-height:225px}.wrapped-featured .project-info{padding:26px}.architecture-flow{gap:9px;padding:15px}.architecture-node{font-size:12px}.hero h1{font-size:clamp(38px,9vw,54px)}.job{padding:21px 4px!important}.hero-resume{order:1}}
+
+/* Two concise impact figures after removing the language count */
+.impact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}@media(max-width:700px){.impact-grid{grid-template-columns:1fr;gap:0}}

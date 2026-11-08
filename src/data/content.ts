@@ -7,7 +7,7 @@ export const content = {
     intro: "I build web and mobile software for financial services, develop cloud-backed APIs, and turn ideas into products. With 6+ years of engineering experience, I also build independent SaaS and explore applied AI.",
     location: "Panama City · UTC−5 · Open to remote full-time roles",
     explore: "Explore my work", connect: "Let's connect", status: "Open to opportunities",
-    stats: [["1M+", "Users on banking platform"], ["900", "Customers in a single loyalty program · up to"]],
+    stats: [["1M+", "Users on banking platform"], ["900", "Customers in a single loyalty program · up to"], ["AI", "Exploring RAG, agent workflows & MCP"]],
     section: ["Selected work", "Professional experience", "Beyond the code", "Technology & interests", "Let's build something meaningful."],
     sectionDescriptions: ["Products and projects that bring together engineering and business value.", "Building reliable applications in banking, insurance, and web development.", "I care about building things people actually use.", "Tools I work with, and the areas I'm actively studying.", "Interested in working together or discussing an opportunity? Reach out."],
     projects: [
@@ -38,7 +38,7 @@ export const content = {
     intro:"Desarrollo software web y móvil para servicios financieros, integro APIs en la nube y convierto ideas en productos. Tengo más de 6 años de experiencia y también construyo productos SaaS y exploro la IA aplicada.",
     location:"Ciudad de Panamá · UTC−5 · Abierto a empleos remotos de tiempo completo",
     explore:"Ver proyectos",connect:"Conectemos",status:"Abierto a oportunidades",
-    stats:[["1M+","Usuarios de plataforma bancaria"],["900","Clientes en un solo programa · hasta"]],
+    stats:[["1M+","Usuarios de plataforma bancaria"],["900","Clientes en un solo programa · hasta"],["AI","Explorando RAG, flujos con agentes y MCP"]],
     section:["Proyectos destacados","Experiencia profesional","Más allá del código","Tecnologías e intereses","Construyamos algo que importe."],
     sectionDescriptions:["Productos que combinan ingeniería y valor real para los negocios.","Desarrollo de aplicaciones confiables en banca, seguros y entornos web.","Me apasiona crear soluciones que las personas realmente utilizan.","Herramientas que utilizo y áreas que estoy estudiando actualmente.","¿Te interesa colaborar o conversar sobre una oportunidad profesional? Escríbeme."],
     projects:[

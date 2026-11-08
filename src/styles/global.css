@@ -31,3 +31,6 @@
 
 /* Resume CTA belongs to the story section, not the hero */
 .story-resume{display:inline-flex;align-items:center;justify-content:center;margin-left:18px;padding:10px 15px;text-decoration:none;border-radius:8px;font-weight:700;font-size:13px;white-space:nowrap}@media(max-width:700px){.story-resume{margin:14px 0 0;display:table}}
+
+/* Cleaner editorial hero: typography instead of technology cards */
+.hero-stack{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:19px 0 3px;color:#9bbbd6;font-size:13px;font-weight:600;letter-spacing:.01em}.hero-stack span{color:#3d729b;font-weight:400}.hero h1{max-width:760px}.hero-copy .intro{max-width:570px}@media(max-width:700px){.hero-stack{font-size:12px;gap:7px;margin-top:16px}.hero h1{overflow-wrap:normal}}

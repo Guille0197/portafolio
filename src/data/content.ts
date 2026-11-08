@@ -3,8 +3,8 @@ export const content = {
   en: {
     nav: ["Work", "Experience", "About", "Expertise", "Contact"],
     greeting: "5+ YEARS IN SOFTWARE ENGINEERING · PANAMA",
-    headline: ["Full Stack Software Engineer", "Building real-world products."],
-    intro: "I'm Guillermo Navarro, a software engineer in Panama with 5+ years of experience building digital products, APIs, and cloud-powered applications. I also create SaaS products and explore practical AI integrations.",
+    headline: ["Full Stack Software Engineer", "Building products that solve real problems."],
+    intro: "I build web and mobile software for financial services, develop cloud-backed APIs, and turn ideas into products. With 5+ years of engineering experience, I also build independent SaaS and explore applied AI.",
     location: "Panama 🇵🇦 · Open to international opportunities",
     explore: "Explore my work", connect: "Let's connect", status: "Open to opportunities",
     stats: [["5+", "Years of experience"], ["AWS", "Cloud engineering"], ["SaaS", "Product builder"]],
@@ -34,8 +34,8 @@ export const content = {
   es: {
     nav:["Proyectos","Experiencia","Sobre mí","Tecnologías","Contacto"],
     greeting:"5+ AÑOS EN INGENIERÍA DE SOFTWARE · PANAMÁ",
-    headline:["Ingeniero de Software Full Stack","Creando productos reales."],
-    intro:"Soy Guillermo Navarro, ingeniero de software en Panamá con más de 5 años de experiencia creando productos digitales, APIs y aplicaciones en la nube. También desarrollo productos SaaS y exploro integraciones prácticas con inteligencia artificial.",
+    headline:["Ingeniero de Software Full Stack","Creando productos que resuelven problemas reales."],
+    intro:"Desarrollo software web y móvil para servicios financieros, integro APIs en la nube y convierto ideas en productos. Tengo más de 5 años de experiencia y también construyo productos SaaS y exploro la IA aplicada.",
     location:"Panamá 🇵🇦 · Abierto a oportunidades internacionales",
     explore:"Ver proyectos",connect:"Conectemos",status:"Abierto a oportunidades",
     stats:[["5+","Años de experiencia"],["AWS","Experiencia en la nube"],["SaaS","Desarrollo de productos"]],

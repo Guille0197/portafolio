@@ -56,7 +56,7 @@ const ids = ["projects","experience","about","stack","contact"];
     <section id="projects" class="section container">
       <div class="section-intro"><div><p class="kicker">01 / WORK</p><h2>{t.section[0]}</h2></div><p>{t.sectionDescriptions[0]}</p></div>
       <div class="projects">{t.projects.map((project,i)=><article class:list={["project",i===0 && "featured"]}>
-        <div class="project-preview">{project.img ? <img src={base + project.img} alt={project.title + " preview"} loading="lazy" width="800" height="450"/> : <div class="project-placeholder"><strong>{project.title === "WrappedMe" ? "WM" : "G·N"}</strong><code>{project.title === "WrappedMe" ? "iOS · On-device intelligence" : "const ideas = build();"}</code></div>}</div>
+        <div class="project-preview">{project.img ? <img src={base + project.img} alt={project.title + " preview"} loading="lazy" width="800" height="450"/> : <div class="project-placeholder"><strong>G·N</strong><code>const ideas = build();</code></div>}</div>
         <div class="project-info"><p class="micro">{project.kind}</p><h3>{project.title}<span> ↗</span></h3><p>{project.desc}</p><ul class="tags">{project.tags.map(tag=><li>{tag}</li>)}</ul><div class="project-actions"><a class="more" href={project.url} target="_blank" rel="noopener noreferrer">{project.cta} ↗</a>{"website" in project && <a class="more" href={project.website} target="_blank" rel="noopener noreferrer">{lang === "en" ? "Website" : "Sitio web"} ↗</a>}</div></div>
       </article>)}</div>
     </section>

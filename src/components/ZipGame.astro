@@ -52,6 +52,10 @@ const en = lang === "en";
     let lastPoint: { x: number; y: number } | null = null;
     let solved = false;
     let cells: HTMLButtonElement[] = [];
+    let routeLine: SVGPolylineElement;
+    let checkpointLayer: SVGGElement;
+    const svgNS = "http://www.w3.org/2000/svg";
+    const point = (i: number) => ({ x: (i % size + .5) * 100, y: (Math.floor(i / size) + .5) * 100 });
     const isAdjacent = (a: number, b: number) => Math.abs(Math.floor(a / size) - Math.floor(b / size)) + Math.abs(a % size - b % size) === 1;
     const route = () => routes[level];
     const message = (english: string, spanish: string) => { feedback.textContent = en ? english : spanish; };
@@ -70,20 +74,40 @@ const en = lang === "en";
         board.append(cell);
         cells.push(cell);
       }
+      // A single SVG path crosses grid gaps seamlessly and stays aligned at any size.
+      const overlay = document.createElementNS(svgNS, "svg");
+      overlay.setAttribute("viewBox", "0 0 500 500");
+      overlay.setAttribute("class", "zip-route-overlay");
+      overlay.setAttribute("aria-hidden", "true");
+      routeLine = document.createElementNS(svgNS, "polyline");
+      routeLine.setAttribute("class", "zip-route-line");
+      overlay.append(routeLine);
+      checkpointLayer = document.createElementNS(svgNS, "g");
+      overlay.append(checkpointLayer);
+      board.append(overlay);
       update();
     }
     function update() {
-      const positions = new Map(path.map((value, i) => [value, i]));
+      const coordinates = path.map(i => point(i));
+      routeLine.setAttribute("points", coordinates.map(p => p.x + "," + p.y).join(" "));
+      checkpointLayer.replaceChildren();
+      for (let n = 0; n < markers.length; n++) {
+        const index = route()[markers[n]];
+        const { x, y } = point(index);
+        const circle = document.createElementNS(svgNS, "circle");
+        circle.setAttribute("cx", String(x));
+        circle.setAttribute("cy", String(y));
+        circle.setAttribute("r", "23");
+        circle.setAttribute("class", "zip-svg-marker" + (index === path[path.length - 1] ? " zip-svg-active" : ""));
+        const label = document.createElementNS(svgNS, "text");
+        label.setAttribute("x", String(x));
+        label.setAttribute("y", String(y));
+        label.setAttribute("class", "zip-svg-label");
+        label.textContent = String(n + 1);
+        checkpointLayer.append(circle, label);
+      }
       for (let i = 0; i < cells.length; i++) {
-        const cell = cells[i];
-        const at = positions.get(i);
-        cell.classList.toggle("zip-filled", at !== undefined);
-        cell.classList.toggle("zip-current", i === path[path.length - 1]);
-        cell.classList.toggle("zip-hint-cell", false);
-        cell.classList.toggle("zip-up", at !== undefined && at > 0 && path[at - 1] === i - size || at !== undefined && at < path.length - 1 && path[at + 1] === i - size);
-        cell.classList.toggle("zip-down", at !== undefined && at > 0 && path[at - 1] === i + size || at !== undefined && at < path.length - 1 && path[at + 1] === i + size);
-        cell.classList.toggle("zip-left", at !== undefined && at > 0 && path[at - 1] === i - 1 && Math.floor((i - 1) / size) === Math.floor(i / size) || at !== undefined && at < path.length - 1 && path[at + 1] === i - 1 && Math.floor((i - 1) / size) === Math.floor(i / size));
-        cell.classList.toggle("zip-right", at !== undefined && at > 0 && path[at - 1] === i + 1 && Math.floor((i + 1) / size) === Math.floor(i / size) || at !== undefined && at < path.length - 1 && path[at + 1] === i + 1 && Math.floor((i + 1) / size) === Math.floor(i / size));
+        cells[i].classList.toggle("zip-hint-cell", false);
       }
       levelText.textContent = String(level + 1).padStart(2, "0") + " / 03";
       movesText.textContent = String(path.length - 1);
@@ -182,4 +206,13 @@ const en = lang === "en";
 </script>
 <style is:global>
   .zip-section{padding-top:95px;padding-bottom:18px}.zip-intro{margin-bottom:26px}.zip-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,410px);align-items:center;gap:clamp(24px,5vw,76px);padding:clamp(24px,4vw,54px);background:linear-gradient(130deg,#111f35,#0b1425 70%);border:1px solid #29415e;border-radius:22px;box-shadow:0 24px 65px #0003}.zip-eyebrow{color:#7fcaff;font-size:11px;font-weight:800;letter-spacing:.14em}.zip-eyebrow span{color:#79edbb}.zip-copy h3{font-size:clamp(27px,3.5vw,43px);line-height:1.1;margin:16px 0}.zip-period{color:#60bfff}.zip-copy>p{color:#b7c7df;font-size:15px;line-height:1.7;max-width:410px}.zip-info{display:flex;gap:28px;margin:32px 0 20px;flex-wrap:wrap}.zip-info>span{font-size:11px;letter-spacing:.1em;color:#90a9c7;display:flex;flex-direction:column;gap:7px}.zip-info strong{color:#eff7ff;font-size:18px;letter-spacing:0}.zip-controls{display:flex;flex-wrap:wrap;gap:9px}.zip-btn,.zip-next{font:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:11px 15px;border:1px solid #3b5676;border-radius:9px;background:#172941;color:#eaf5ff;transition:background .15s,border-color .15s}.zip-btn:hover:not(:disabled),.zip-next:hover{background:#234365;border-color:#6bbfff}.zip-btn:focus-visible,.zip-next:focus-visible,.zip-cell:focus-visible{outline:2px solid #7bd4ff;outline-offset:2px}.zip-btn:disabled{opacity:.4;cursor:not-allowed}.zip-feedback{min-height:45px;margin:18px 0 14px!important;color:#8cdbb7!important;font-size:13px!important}.zip-rules{border-top:1px solid #2a3b54;padding-top:18px;display:flex;gap:12px;align-items:flex-start;color:#a9bad1;font-size:13px;line-height:1.6;max-width:390px}.zip-rule-icon{font-size:20px;color:#7ac9ff;line-height:1}.zip-board-area{background:#0b1526;border:1px solid #344b69;border-radius:16px;padding:clamp(12px,2vw,22px);min-width:0}.zip-board-top,.zip-board-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#91a9c7;font-size:10px;font-weight:700;letter-spacing:.09em}.zip-board-top{margin-bottom:15px}.zip-board-bottom{margin-top:15px;letter-spacing:0;font-weight:500}.zip-live-dot{display:inline-block;width:7px;height:7px;background:#57e6a6;border-radius:50%;margin-right:6px;box-shadow:0 0 10px #57e6a6}.zip-board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;touch-action:none;user-select:none;-webkit-user-select:none;aspect-ratio:1;background:#34465f;border:3px solid #34465f;border-radius:11px;overflow:hidden}.zip-cell{position:relative;display:grid;place-items:center;border:0;border-radius:2px;background:#14243b;min-width:0;min-height:0;padding:0;cursor:pointer;touch-action:none;isolation:isolate}.zip-cell::before{content:"";position:absolute;z-index:0;background:#277fbb;opacity:0;inset:32%;border-radius:3px;transition:opacity .12s}.zip-cell.zip-filled::before{opacity:1}.zip-cell.zip-up::before{top:0}.zip-cell.zip-down::before{bottom:0}.zip-cell.zip-left::before{left:0}.zip-cell.zip-right::before{right:0}.zip-cell.zip-current::before{background:#2cbf96}.zip-cell.zip-hint-cell{background:#28533d;box-shadow:inset 0 0 0 2px #66e6ac}.zip-number{position:relative;z-index:1;display:grid;place-items:center;width:clamp(22px,65%,36px);aspect-ratio:1;background:#08111f;color:#fff;border:2px solid #5abaff;border-radius:50%;font-size:clamp(12px,2vw,17px);font-weight:800;box-shadow:0 2px 8px #0006}.zip-current .zip-number{border-color:#72efa9}.zip-next{display:block;margin-top:14px;width:100%;background:#125d9e;border-color:#248de2}.zip-next[hidden]{display:none}@media(max-width:820px){.zip-panel{grid-template-columns:1fr;gap:26px}.zip-board-area{width:100%;max-width:420px;margin:auto}.zip-info{margin:20px 0}.zip-section{padding-top:65px}}@media(max-width:480px){.zip-panel{padding:18px;border-radius:15px}.zip-board-area{padding:12px}.zip-board{gap:2px;border-width:2px}.zip-btn{padding:10px 12px;font-size:12px}.zip-section{padding-top:52px}.zip-copy h3{font-size:29px}}@media(prefers-reduced-motion:reduce){.zip-cell::before,.zip-btn,.zip-next{transition:none}}
+  /* Draw one uninterrupted, rounded line rather than separate rectangles per cell. */
+  .zip-board{position:relative}
+  .zip-cell::before{display:none!important}
+  .zip-number{visibility:hidden}
+  .zip-route-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:visible}
+  .zip-route-line{fill:none;stroke:#39a6ef;stroke-width:25;stroke-linecap:round;stroke-linejoin:round}
+  .zip-svg-marker{fill:#081625;stroke:#63c7ff;stroke-width:3}
+  .zip-svg-marker.zip-svg-active{stroke:#6cf1b5;fill:#12382e}
+  .zip-svg-label{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:23px;font-weight:800;fill:#f5faff;text-anchor:middle;dominant-baseline:central}
 </style>

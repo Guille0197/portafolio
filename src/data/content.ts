@@ -2,8 +2,8 @@ export type Language = "en" | "es";
 export const content = {
   en: {
     nav: ["Work", "Experience", "About", "Expertise", "Contact"],
-    greeting: "SOFTWARE ENGINEER · FULL STACK · AWS CLOUD",
-    headline: ["Building software", "that makes an impact."],
+    greeting: "5+ YEARS IN SOFTWARE ENGINEERING · PANAMA",
+    headline: ["Full Stack Software Engineer", "Building real-world products."],
     intro: "I'm Guillermo Navarro, a software engineer in Panama with 5+ years of experience building digital products, APIs, and cloud-powered applications. I also create SaaS products and explore practical AI integrations.",
     location: "Panama 🇵🇦 · Open to international opportunities",
     explore: "Explore my work", connect: "Let's connect", status: "Open to opportunities",
@@ -33,8 +33,8 @@ export const content = {
   },
   es: {
     nav:["Proyectos","Experiencia","Sobre mí","Tecnologías","Contacto"],
-    greeting:"INGENIERO DE SOFTWARE · FULL STACK · AWS CLOUD",
-    headline:["Desarrollo software","que genera impacto."],
+    greeting:"5+ AÑOS EN INGENIERÍA DE SOFTWARE · PANAMÁ",
+    headline:["Ingeniero de Software Full Stack","Creando productos reales."],
     intro:"Soy Guillermo Navarro, ingeniero de software en Panamá con más de 5 años de experiencia creando productos digitales, APIs y aplicaciones en la nube. También desarrollo productos SaaS y exploro integraciones prácticas con inteligencia artificial.",
     location:"Panamá 🇵🇦 · Abierto a oportunidades internacionales",
     explore:"Ver proyectos",connect:"Conectemos",status:"Abierto a oportunidades",

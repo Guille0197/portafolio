@@ -15,42 +15,53 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 6 0 obj
-<< /Length 2998 >>
+<< /Length 4860 >>
 stream
-0.10 0.25 0.42 rg
-BT /F2 19 Tf 52 746 Td (GUILLERMO NAVARRO) Tj ET
-BT /F2 10 Tf 52 725 Td (Full Stack Software Engineer | AWS Cloud | SaaS & Applied AI) Tj ET
-BT /F1 9 Tf 52 707 Td (Panama City, Panama | github.com/Guille0197 | guille0197.github.io/portafolio/) Tj ET
-BT /F1 9 Tf 52 692 Td (linkedin.com/in/guillermo-antonio-navarro/) Tj ET
-BT /F2 11 Tf 52 664 Td (PROFESSIONAL SUMMARY) Tj ET
-BT /F1 9 Tf 52 645 Td (Software engineer with 5+ years of experience in web and mobile development.) Tj ET
-BT /F1 9 Tf 52 631 Td (Financial-services experience across Angular, Ionic, Java, Spring Boot, REST APIs and AWS.) Tj ET
-BT /F1 9 Tf 52 617 Td (Independent builder of Panaloyal SaaS and WrappedMe, a published on-device AI iOS app.) Tj ET
-BT /F2 11 Tf 52 588 Td (EXPERIENCE) Tj ET
-BT /F2 10 Tf 52 568 Td (BANCO GENERAL | Full Stack Developer | Sep 2022 - Present) Tj ET
-BT /F1 9 Tf 52 553 Td (Develop and maintain mobile-banking functionality with Angular, Ionic and Java/Spring Boot.) Tj ET
-BT /F1 9 Tf 52 539 Td (Integrate REST APIs and AWS services in a regulated financial-services environment.) Tj ET
-BT /F2 10 Tf 52 514 Td (ASSA INSURANCE | Programmer Analyst | Oct 2020 - Aug 2022) Tj ET
-BT /F1 9 Tf 52 499 Td (Built web/mobile insurance software with C#/.NET APIs, React and React Native.) Tj ET
-BT /F1 9 Tf 52 485 Td (Collaborated in Agile delivery workflows using Azure DevOps.) Tj ET
-BT /F2 10 Tf 52 460 Td (DIPROCESS | Junior Web Developer | 2019 - 2020) Tj ET
-BT /F1 9 Tf 52 445 Td (Developed web interfaces, REST integrations, SQL Server features and CI/CD workflows.) Tj ET
-BT /F2 11 Tf 52 415 Td (SELECTED PRODUCTS) Tj ET
-BT /F2 10 Tf 52 395 Td (PANALOYAL | SaaS product | panaloyal.com) Tj ET
-BT /F1 9 Tf 52 380 Td (Digital loyalty platform: wallet passes, QR enrollment, stamp cards and campaigns.) Tj ET
-BT /F1 9 Tf 52 366 Td (Built with Next.js, Supabase, API endpoints, webhooks and scheduled automation.) Tj ET
-BT /F2 10 Tf 52 341 Td (WRAPPEDME | iOS app | apps.apple.com/us/app/id6790265801) Tj ET
-BT /F1 9 Tf 52 326 Td (Published SwiftUI app using Apple Vision and Apple Intelligence on-device.) Tj ET
-BT /F1 9 Tf 52 312 Td (Photo recaps, local analysis, Face ID, StoreKit 2 and six supported languages.) Tj ET
-BT /F2 11 Tf 52 283 Td (TECHNICAL SKILLS) Tj ET
-BT /F1 9 Tf 52 263 Td (Frontend: TypeScript, JavaScript, React, Angular, Ionic, HTML/CSS) Tj ET
-BT /F1 9 Tf 52 249 Td (Backend: Node.js, Java, Spring Boot, C#/.NET, REST APIs, SQL) Tj ET
-BT /F1 9 Tf 52 235 Td (Cloud: AWS, API Gateway, S3, Fargate, CloudFormation, Docker, CI/CD) Tj ET
-BT /F1 9 Tf 52 221 Td (iOS/AI: SwiftUI, Vision, Apple Intelligence; exploring MCP and agent workflows) Tj ET
-BT /F2 11 Tf 52 190 Td (EDUCATION & CERTIFICATIONS) Tj ET
-BT /F1 9 Tf 52 171 Td (Universidad Tecnologica de Panama | Software Development degree program completed) Tj ET
-BT /F1 9 Tf 52 157 Td (AWS Certified Cloud Practitioner | Previously earned; current status to verify) Tj ET
-0.1 0.44 0.7 RG 0.8 w 52 681 m 560 681 l S
+BT /F2 16 Tf 0 g 48 750 Td (GUILLERMO NAVARRO) Tj ET
+BT /F1 8 Tf 0 g 239.36 728.2 Td (Panama City, Panama | gnavarro0197@gmail.com | github.com/Guille0197) Tj ET
+BT /F1 8 Tf 0 g 265.82 716.4000000000001 Td (linkedin.com/in/guillermo-antonio-navarro) Tj ET
+0.22 G 48 689.6000000000001 m 564 689.6000000000001 l S
+BT /F2 10 Tf 0 g 48 689.6000000000001 Td (PROFESSIONAL SUMMARY) Tj ET
+BT /F1 8.5 Tf 0 g 48 675.8000000000002 Td (Full Stack Software Engineer with 5+ years of experience delivering web and mobile applications in banking) Tj ET
+BT /F1 8.5 Tf 0 g 48 663.5000000000002 Td (and insurance. Experienced with Angular, React, TypeScript, Java, Spring Boot, REST APIs, and AWS.) Tj ET
+BT /F1 8.5 Tf 0 g 48 651.2000000000003 Td (Independent SaaS builder with a published iOS application using on-device AI.) Tj ET
+0.22 G 48 623.9000000000003 m 564 623.9000000000003 l S
+BT /F2 10 Tf 0 g 48 623.9000000000003 Td (TECHNICAL SKILLS) Tj ET
+BT /F1 8.3 Tf 0 g 48 610.1000000000004 Td (Frontend & Mobile: TypeScript, JavaScript, React, Angular, Ionic, React Native, SwiftUI) Tj ET
+BT /F1 8.3 Tf 0 g 48 598.0000000000003 Td (Backend & Data: Java, Spring Boot, C#, .NET Core, Node.js, REST APIs, SQL Server, PostgreSQL, Supabase) Tj ET
+BT /F1 8.3 Tf 0 g 48 585.9000000000003 Td (Cloud & Delivery: AWS \(API Gateway, S3, Fargate\), CloudFormation, Docker, CI/CD, Azure DevOps, Scrum) Tj ET
+BT /F1 8.3 Tf 0 g 48 573.8000000000003 Td (AI: Applied Apple Vision & Apple Intelligence; exploring Claude Code, agent workflows, MCP, local LLMs, AI) Tj ET
+BT /F1 8.3 Tf 0 g 48 561.7000000000003 Td (security, SDD/ASDD/ODD) Tj ET
+0.22 G 48 534.6000000000003 m 564 534.6000000000003 l S
+BT /F2 10 Tf 0 g 48 534.6000000000003 Td (PROFESSIONAL EXPERIENCE) Tj ET
+BT /F2 8.6 Tf 0 g 48 515.8000000000003 Td (BANCO GENERAL | Full Stack Developer | Sep 2022 - Present) Tj ET
+BT /F1 8.2 Tf 0 g 60 503.4000000000003 Td (- Develop and enhance consumer mobile-banking features with Angular, Ionic, Java, Spring Boot, REST APIs,) Tj ET
+BT /F1 8.2 Tf 0 g 60 491.4000000000003 Td (and AWS for a banking platform serving more than 1 million users.) Tj ET
+BT /F1 8.2 Tf 0 g 60 479.4000000000003 Td (- Contribute to the commercial banking mobile app by integrating payment SDKs that support Tap on Phone) Tj ET
+BT /F1 8.2 Tf 0 g 60 467.4000000000003 Td (transactions on compatible devices.) Tj ET
+BT /F1 8.2 Tf 0 g 60 455.4000000000003 Td (- Deliver new features and user-experience improvements while maintaining production applications in a) Tj ET
+BT /F1 8.2 Tf 0 g 60 443.4000000000003 Td (regulated financial environment.) Tj ET
+BT /F2 8.6 Tf 0 g 48 426.4000000000003 Td (ASSA COMPANIA DE SEGUROS | Programmer Analyst | Oct 2020 - Aug 2022) Tj ET
+BT /F1 8.2 Tf 0 g 60 414.00000000000034 Td (- Developed backend services with C#/.NET Core and web/mobile interfaces with React and React Native for) Tj ET
+BT /F1 8.2 Tf 0 g 60 402.00000000000034 Td (insurance customers.) Tj ET
+BT /F1 8.2 Tf 0 g 60 390.00000000000034 Td (- Collaborated on JavaScript/TypeScript applications, databases, Agile/Scrum processes, and Azure DevOps) Tj ET
+BT /F1 8.2 Tf 0 g 60 378.00000000000034 Td (workflows.) Tj ET
+BT /F2 8.6 Tf 0 g 48 361.00000000000034 Td (DIPROCESS | Junior Web Developer | 2019 - 2020) Tj ET
+BT /F1 8.2 Tf 0 g 60 348.60000000000036 Td (- Built and maintained client websites using HTML5, CSS3, and JavaScript; developed REST APIs with C#/.NET) Tj ET
+BT /F1 8.2 Tf 0 g 60 336.60000000000036 Td (Core.) Tj ET
+BT /F1 8.2 Tf 0 g 60 324.60000000000036 Td (- Designed SQL Server databases and supported CI/CD automation with Azure DevOps.) Tj ET
+0.22 G 48 297.60000000000036 m 564 297.60000000000036 l S
+BT /F2 10 Tf 0 g 48 297.60000000000036 Td (SELECTED PROJECTS) Tj ET
+BT /F2 8.6 Tf 0 g 48 278.80000000000035 Td (WRAPPEDME | iOS Developer | Published on the App Store) Tj ET
+BT /F1 8.2 Tf 0 g 60 266.4000000000004 Td (- Built a native SwiftUI iOS app that transforms photo libraries into recaps using on-device Apple Vision) Tj ET
+BT /F1 8.2 Tf 0 g 60 254.40000000000038 Td (and Apple Intelligence; prioritizes private local processing.) Tj ET
+BT /F2 8.6 Tf 0 g 48 237.40000000000038 Td (PANALOYAL | SaaS Founder & Developer) Tj ET
+BT /F1 8.2 Tf 0 g 60 225.00000000000037 Td (- Built a digital loyalty SaaS with QR enrollment, wallet passes, customer insights, rewards, and campaign) Tj ET
+BT /F1 8.2 Tf 0 g 60 213.00000000000037 Td (automation using Next.js and Supabase. panaloyal.com) Tj ET
+0.22 G 48 186.00000000000037 m 564 186.00000000000037 l S
+BT /F2 10 Tf 0 g 48 186.00000000000037 Td (EDUCATION & CERTIFICATION) Tj ET
+BT /F1 8.2 Tf 0 g 48 172.20000000000036 Td (Universidad Tecnologica de Panama | Software Development degree requirements completed) Tj ET
+BT /F1 8.2 Tf 0 g 48 160.20000000000036 Td (AWS Certified Cloud Practitioner | Previously earned; current status to verify) Tj ET
 endstream
 endobj
 xref
@@ -65,5 +76,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-3445
+5307
 %%EOF

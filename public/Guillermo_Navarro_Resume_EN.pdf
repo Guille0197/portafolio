@@ -1,0 +1,69 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2998 >>
+stream
+0.10 0.25 0.42 rg
+BT /F2 19 Tf 52 746 Td (GUILLERMO NAVARRO) Tj ET
+BT /F2 10 Tf 52 725 Td (Full Stack Software Engineer | AWS Cloud | SaaS & Applied AI) Tj ET
+BT /F1 9 Tf 52 707 Td (Panama City, Panama | github.com/Guille0197 | guille0197.github.io/portafolio/) Tj ET
+BT /F1 9 Tf 52 692 Td (linkedin.com/in/guillermo-antonio-navarro/) Tj ET
+BT /F2 11 Tf 52 664 Td (PROFESSIONAL SUMMARY) Tj ET
+BT /F1 9 Tf 52 645 Td (Software engineer with 5+ years of experience in web and mobile development.) Tj ET
+BT /F1 9 Tf 52 631 Td (Financial-services experience across Angular, Ionic, Java, Spring Boot, REST APIs and AWS.) Tj ET
+BT /F1 9 Tf 52 617 Td (Independent builder of Panaloyal SaaS and WrappedMe, a published on-device AI iOS app.) Tj ET
+BT /F2 11 Tf 52 588 Td (EXPERIENCE) Tj ET
+BT /F2 10 Tf 52 568 Td (BANCO GENERAL | Full Stack Developer | Sep 2022 - Present) Tj ET
+BT /F1 9 Tf 52 553 Td (Develop and maintain mobile-banking functionality with Angular, Ionic and Java/Spring Boot.) Tj ET
+BT /F1 9 Tf 52 539 Td (Integrate REST APIs and AWS services in a regulated financial-services environment.) Tj ET
+BT /F2 10 Tf 52 514 Td (ASSA INSURANCE | Programmer Analyst | Oct 2020 - Aug 2022) Tj ET
+BT /F1 9 Tf 52 499 Td (Built web/mobile insurance software with C#/.NET APIs, React and React Native.) Tj ET
+BT /F1 9 Tf 52 485 Td (Collaborated in Agile delivery workflows using Azure DevOps.) Tj ET
+BT /F2 10 Tf 52 460 Td (DIPROCESS | Junior Web Developer | 2019 - 2020) Tj ET
+BT /F1 9 Tf 52 445 Td (Developed web interfaces, REST integrations, SQL Server features and CI/CD workflows.) Tj ET
+BT /F2 11 Tf 52 415 Td (SELECTED PRODUCTS) Tj ET
+BT /F2 10 Tf 52 395 Td (PANALOYAL | SaaS product | panaloyal.com) Tj ET
+BT /F1 9 Tf 52 380 Td (Digital loyalty platform: wallet passes, QR enrollment, stamp cards and campaigns.) Tj ET
+BT /F1 9 Tf 52 366 Td (Built with Next.js, Supabase, API endpoints, webhooks and scheduled automation.) Tj ET
+BT /F2 10 Tf 52 341 Td (WRAPPEDME | iOS app | apps.apple.com/us/app/id6790265801) Tj ET
+BT /F1 9 Tf 52 326 Td (Published SwiftUI app using Apple Vision and Apple Intelligence on-device.) Tj ET
+BT /F1 9 Tf 52 312 Td (Photo recaps, local analysis, Face ID, StoreKit 2 and six supported languages.) Tj ET
+BT /F2 11 Tf 52 283 Td (TECHNICAL SKILLS) Tj ET
+BT /F1 9 Tf 52 263 Td (Frontend: TypeScript, JavaScript, React, Angular, Ionic, HTML/CSS) Tj ET
+BT /F1 9 Tf 52 249 Td (Backend: Node.js, Java, Spring Boot, C#/.NET, REST APIs, SQL) Tj ET
+BT /F1 9 Tf 52 235 Td (Cloud: AWS, API Gateway, S3, Fargate, CloudFormation, Docker, CI/CD) Tj ET
+BT /F1 9 Tf 52 221 Td (iOS/AI: SwiftUI, Vision, Apple Intelligence; exploring MCP and agent workflows) Tj ET
+BT /F2 11 Tf 52 190 Td (EDUCATION & CERTIFICATIONS) Tj ET
+BT /F1 9 Tf 52 171 Td (Universidad Tecnologica de Panama | Software Development degree program completed) Tj ET
+BT /F1 9 Tf 52 157 Td (AWS Certified Cloud Practitioner | Previously earned; current status to verify) Tj ET
+0.1 0.44 0.7 RG 0.8 w 52 681 m 560 681 l S
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3445
+%%EOF

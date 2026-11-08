@@ -1,9 +1,11 @@
 ---
 import { content, type Language } from "../data/content";
+import { caseStudies } from "../data/caseStudies";
 import "../styles/global.css";
 interface Props { lang: Language }
 const { lang } = Astro.props;
 const t = content[lang];
+const cases = caseStudies[lang];
 const base = import.meta.env.BASE_URL;
 const current = lang === "en" ? base : base + "es/";
 const other = lang === "en" ? base + "es/" : base;
@@ -49,7 +51,7 @@ const ids = ["projects","experience","about","stack","contact"];
         
         <h1>{t.headline[0]}<br/><span class="gradient">{t.headline[1]}</span></h1>
         <p class="role-summary">{lang === "en" ? "Full Stack Developer · AWS Cloud · SaaS Builder" : "Desarrollador Full Stack · AWS Cloud · Creador SaaS"}</p><p class="intro">{t.intro}</p><div class="hero-tech" aria-label={lang === "en" ? "Core technologies" : "Tecnologías principales"}><span>TypeScript</span><span>React / Angular</span><span>Node.js</span><span>AWS</span><span>AI integrations</span></div><p class="location">⌁ {t.location}</p>
-        <div class="actions"><a class="btn primary" href="#projects">{t.explore} ↗</a><a class="btn secondary" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn tertiary" href={github} target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+        <div class="actions"><a class="btn primary" href="#projects">{t.explore} ↗</a><a class="btn secondary" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn tertiary" href={github} target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn resume-btn" href={base + "Guillermo_Navarro_Resume_EN.pdf"} download="Guillermo_Navarro_Resume_EN.pdf">{lang === "en" ? "Download résumé ↓" : "Descargar CV ↓"}</a></div>
       </div>
       <div class="hero-graphic"><div class="orbit"></div><div class="orbit orbit-small"></div><img class="portrait" src={profilePhoto} alt="Guillermo Navarro, software engineer" width="300" height="300" fetchpriority="high" /><div class="float-card available"><span class="status-dot"></span>{t.status}</div><div class="float-card code"><span class="blue">&lt;/&gt;</span> Full Stack · AWS · AI</div></div>
       <div class="stats">{t.stats.map(([value,label])=><div class="stat"><strong>{value}</strong><span>{label}</span></div>)}</div>
@@ -58,12 +60,23 @@ const ids = ["projects","experience","about","stack","contact"];
       <div class="section-intro"><div><p class="kicker">01 / WORK</p><h2>{t.section[0]}</h2></div><p>{t.sectionDescriptions[0]}</p></div>
       <div class="projects">{t.projects.map((project,i)=><article class:list={["project",i===0 && "featured"]}>
         <div class="project-preview">{project.img ? <img src={base + project.img} alt={project.title + " preview"} loading="lazy" width="800" height="450"/> : <div class="project-placeholder"><strong>G·N</strong><code>const ideas = build();</code></div>}</div>
-        <div class="project-info"><p class="micro">{project.kind}</p><h3>{project.title}<span> ↗</span></h3><p>{project.desc}</p><ul class="tags">{project.tags.map(tag=><li>{tag}</li>)}</ul><div class="project-actions"><a class="more" href={project.url} target="_blank" rel="noopener noreferrer">{project.cta} ↗</a>{"website" in project && <a class="more" href={project.website} target="_blank" rel="noopener noreferrer">{lang === "en" ? "Website" : "Sitio web"} ↗</a>}</div></div>
+        <div class="project-info"><p class="micro">{project.kind}</p><h3>{project.title}<span> ↗</span></h3><p>{project.desc}</p><ul class="tags">{project.tags.map(tag=><li>{tag}</li>)}</ul><div class="project-actions"><a class="more" href={project.url} target="_blank" rel="noopener noreferrer">{project.cta} ↗</a>{"website" in project && <a class="more" href={project.website} target="_blank" rel="noopener noreferrer">{lang === "en" ? "Website" : "Sitio web"} ↗</a>}{(project.title === "Panaloyal" || project.title === "WrappedMe") && <a class="more case-link" href={"#case-"+project.title.toLowerCase()}>{lang === "en" ? "Engineering case study" : "Caso de ingeniería"} ↘</a>}</div></div>
       </article>)}</div>
+      <div class="case-studies">
+        <div class="case-heading"><p class="kicker">{lang === "en" ? "ENGINEERING DEEP DIVES" : "DETALLES DE INGENIERÍA"}</p><h3>{lang === "en" ? "Behind the products" : "Detrás de los productos"}</h3><p>{lang === "en" ? "Real challenges, architecture and technical decisions — without invented metrics." : "Problemas reales, arquitectura y decisiones técnicas, sin métricas inventadas."}</p></div>
+        {cases.map(item=><article class="case-study" id={"case-"+item.slug}><div class="case-top"><div><p class="micro">{lang === "en" ? "PRODUCT CASE STUDY" : "CASO DE PRODUCTO"}</p><h3>{item.title}</h3><p>{item.subtitle}</p></div><span class="case-number">↗</span></div>
+          <div class="case-grid">
+            <div><h4>{lang === "en" ? "Challenge" : "Problema"}</h4><p>{item.challenge}</p><h4>{lang === "en" ? "Solution" : "Solución"}</h4><p>{item.solution}</p></div>
+            <div><h4>{lang === "en" ? "Architecture" : "Arquitectura"}</h4><ul>{item.architecture.map(x=><li>{x}</li>)}</ul></div>
+            <div><h4>{lang === "en" ? "Engineering decisions" : "Decisiones técnicas"}</h4><ul>{item.decisions.map(x=><li>{x}</li>)}</ul></div>
+          </div>
+          <div class="case-outcome"><strong>{lang === "en" ? "Outcome" : "Resultado"}</strong><p>{item.outcome}</p><div>{item.links.map(link=><a class="more" href={link.url} target="_blank" rel="noopener noreferrer">{link.label} ↗</a>)}</div></div>
+        </article>)}
+      </div>
     </section>
     <section id="experience" class="section container">
       <div class="section-intro"><div><p class="kicker">02 / CAREER</p><h2>{t.section[1]}</h2></div><p>{t.sectionDescriptions[1]}</p></div>
-      <div class="career">{t.jobs.map(job=><article class="job"><div class="job-date">{job.dates}</div><div class="job-details"><h3>{job.role}</h3><p class="company">{job.company}</p><p>{job.desc}</p><ul class="tags">{job.tags.map(tag=><li>{tag}</li>)}</ul></div></article>)}</div>
+      <div class="career">{t.jobs.map(job=><article class="job"><div class="job-date">{job.dates}</div><div class="job-details"><h3>{job.role}</h3><p class="company">{job.company}</p><p>{job.desc}</p>{"highlights" in job && <ul class="job-highlights">{job.highlights.map(line=><li>{line}</li>)}</ul>}<ul class="tags">{job.tags.map(tag=><li>{tag}</li>)}</ul></div></article>)}</div>
     </section>
     <section id="about" class="section container about">
       <div class="about-photo"><img src={base + "gan01_97.webp"} loading="lazy" width="360" height="360" alt="Guillermo Navarro" /></div>

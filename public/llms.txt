@@ -1,0 +1,34 @@
+# Guillermo Navarro — Full Stack Software Engineer
+
+> Official bilingual portfolio of Guillermo Navarro, a software engineer based in Panama City, Panama.
+
+Website: https://gnavarro.dev/
+Spanish version: https://gnavarro.dev/es/
+Source code: https://github.com/Guille0197/portafolio
+
+## Professional background
+Guillermo Navarro has over six years of professional software development experience, including mobile banking, financial services, insurance software, web applications, cloud APIs, and independent SaaS products.
+
+- Banco General (2022–present): Full Stack Developer working on mobile banking, commercial payment capabilities, Angular/Ionic, Java/Spring Boot and AWS.
+- ASSA (2020–2022): Software development with .NET Core, React and React Native.
+- Diprocess (2019–2020): Software development.
+- Education: Software Development degree, Universidad Tecnológica de Panamá.
+
+## Selected work
+- Panaloyal: Digital loyalty and rewards SaaS for businesses. https://panaloyal.com/
+- WrappedMe: iOS photo-story app using on-device Apple Vision and Apple Intelligence. https://apps.apple.com/us/app/camera-roll-stories-wrappedme/id6790265801
+- Portfolio: Bilingual Astro portfolio. https://github.com/Guille0197/portafolio
+
+## Technical focus
+TypeScript, Angular, React, Java, Spring Boot, Node.js, PostgreSQL, AWS, mobile development, SaaS. Exploring applied AI, retrieval-augmented generation (RAG), and agent workflows; these are areas of exploration, not claims of production deployment.
+
+## Professional profiles
+- GitHub: https://github.com/Guille0197
+- LinkedIn: https://www.linkedin.com/in/guillermo-antonio-navarro/
+- Remote.io: https://remote.io/guillermo-navarro
+- Upwork: https://www.upwork.com/freelancers/~01ca2bbe18b62bfa62
+
+## Contact
+For employment and collaboration inquiries, use the contact options on https://gnavarro.dev/#contact
+
+This file is a human-maintained orientation resource for compatible AI tools. It is not a guarantee of indexing or citations by search engines.

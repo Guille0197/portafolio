@@ -18,6 +18,44 @@ const ogImage = new URL(base + "og-cover.svg", Astro.site).toString();
 const github = "https://github.com/Guille0197";
 const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
 const ids = ["projects","experience","about","stack","contact"];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://gnavarro.dev/#person",
+      name: "Guillermo Navarro",
+      url: "https://gnavarro.dev/",
+      image: "https://gnavarro.dev/gan01_97.webp",
+      jobTitle: lang === "en" ? "Full Stack Software Engineer" : "Ingeniero de Software Full Stack",
+      description: t.seoDescription,
+      knowsLanguage: ["en", "es"],
+      homeLocation: { "@type": "Place", name: "Panama City, Panama" },
+      knowsAbout: ["Full Stack Development", "TypeScript", "Angular", "React", "Java", "Spring Boot", "AWS", "Mobile Applications", "SaaS", "Cloud Computing"],
+      sameAs: [github, linkedin, "https://remote.io/guillermo-navarro", "https://www.upwork.com/freelancers/~01ca2bbe18b62bfa62"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gnavarro.dev/#website",
+      name: "Guillermo Navarro | Portfolio",
+      url: "https://gnavarro.dev/",
+      inLanguage: ["en", "es"],
+      publisher: { "@id": "https://gnavarro.dev/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": canonical + "#webpage",
+      url: canonical,
+      name: t.seoTitle,
+      description: t.seoDescription,
+      inLanguage: lang,
+      isPartOf: { "@id": "https://gnavarro.dev/#website" },
+      mainEntity: { "@id": "https://gnavarro.dev/#person" },
+      primaryImageOfPage: { "@type": "ImageObject", url: ogImage }
+    }
+  ]
+};
+const structuredDataJson = JSON.stringify(structuredData).replace(/</g, "\\u003c");
 ---
 <!doctype html>
 <html lang={lang}>
@@ -27,7 +65,12 @@ const ids = ["projects","experience","about","stack","contact"];
   <meta name="theme-color" content="#080e1b" />
   <meta name="author" content="Guillermo Navarro" />
   <meta name="description" content={t.seoDescription} />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
   <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Guillermo Navarro | Portfolio" />
+  <meta property="og:locale" content={lang === "en" ? "en_US" : "es_PA"} />
+  <meta property="og:locale:alternate" content={lang === "en" ? "es_PA" : "en_US"} />
   <meta property="og:title" content={t.seoTitle} />
   <meta property="og:description" content={t.seoDescription} />
   <meta property="og:url" content={canonical} />
@@ -35,12 +78,17 @@ const ids = ["projects","experience","about","stack","contact"];
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:title" content={t.seoTitle} />
+  <meta name="twitter:description" content={t.seoDescription} />
+  <meta name="twitter:image:alt" content="Guillermo Navarro — Full Stack Software Engineer" />
+  <meta property="og:image:alt" content="Guillermo Navarro — Full Stack Software Engineer portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href={canonical} />
   <link rel="alternate" hreflang="en" href={enUrl} />
   <link rel="alternate" hreflang="es" href={esUrl} />
   <link rel="alternate" hreflang="x-default" href={enUrl} />
   <link rel="icon" href={base + "favicon.svg"} type="image/svg+xml" />
+  <script type="application/ld+json" set:html={structuredDataJson} />
   <title>{t.seoTitle}</title>
 </head>
 <body>

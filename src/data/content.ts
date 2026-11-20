@@ -1,7 +1,8 @@
 export type Language = "en" | "es";
 export const content = {
   en: {
-    nav: ["Work", "Experience", "About", "Expertise", "Contact"],
+    nav: ["Work", "Experience", "About", "Expertise", "Certifications", "Contact"],
+    credentials: { eyebrow: "05 / CREDENTIALS", title: "Certifications & achievements", description: "A growing collection of credentials earned through continuous learning and hands-on work. Each badge links to its Credly verification page.", profileCta: "View my Credly profile", singleCount: "public credential", pluralCount: "public credentials", updatedLabel: "Last synced", issuedLabel: "Issued", empty: "Your public Credly badges will appear here automatically." },
     greeting: "6+ YEARS IN SOFTWARE ENGINEERING · PANAMA",
     headline: ["Full Stack Software Engineer", "Building software and SaaS products."],
     intro: "I build web and mobile software for financial services, develop cloud-backed APIs, and turn ideas into products. With 6+ years of engineering experience, I also build independent SaaS and explore applied AI.",
@@ -32,7 +33,8 @@ export const content = {
     seoDescription:"Software Engineer in Panama with 6+ years of experience in full-stack development, AWS cloud, SaaS products, and applied AI exploration."
   },
   es: {
-    nav:["Proyectos","Experiencia","Sobre mí","Tecnologías","Contacto"],
+    nav:["Proyectos","Experiencia","Sobre mí","Tecnologías","Certificaciones","Contacto"],
+    credentials: { eyebrow: "05 / CERTIFICACIONES", title: "Certificaciones y logros", description: "Una colección en crecimiento de credenciales obtenidas mediante aprendizaje continuo y experiencia práctica. Cada insignia enlaza a su página de verificación en Credly.", profileCta: "Ver mi perfil de Credly", singleCount: "credencial pública", pluralCount: "credenciales públicas", updatedLabel: "Última sincronización", issuedLabel: "Emitida", empty: "Tus insignias públicas de Credly aparecerán aquí automáticamente." },
     greeting:"6+ AÑOS EN INGENIERÍA DE SOFTWARE · PANAMÁ",
     headline:["Ingeniero de Software Full Stack","Creando software y productos SaaS."],
     intro:"Desarrollo software web y móvil para servicios financieros, integro APIs en la nube y convierto ideas en productos. Tengo más de 6 años de experiencia y también construyo productos SaaS y exploro la IA aplicada.",

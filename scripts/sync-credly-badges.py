@@ -89,6 +89,22 @@ def normalize_badge(item: dict) -> dict | None:
     }
 
 
+def load_cached_badges() -> list[dict]:
+    if not OUTPUT.exists():
+        return []
+
+    try:
+        snapshot = json.loads(OUTPUT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise RuntimeError(f"Could not read the existing Credly cache: {error}") from error
+
+    cached = snapshot.get("badges")
+    if not isinstance(cached, list):
+        raise RuntimeError("The existing Credly cache is invalid; refusing to overwrite it.")
+
+    return cached
+
+
 def main() -> None:
     items: list[dict] = []
     for page in range(1, MAX_PAGES + 1):
@@ -99,17 +115,48 @@ def main() -> None:
     else:
         raise RuntimeError(f"Credly pagination exceeded the safety limit of {MAX_PAGES} pages.")
 
-    badges = [badge for item in items if (badge := normalize_badge(item))]
-    badges.sort(key=lambda badge: badge["issuedAt"], reverse=True)
+    fetched_badges = [badge for item in items if (badge := normalize_badge(item))]
+    if not fetched_badges:
+        raise RuntimeError(
+            "Credly returned zero usable public badges. The existing cache was preserved."
+        )
+
+    cached_badges = load_cached_badges()
+    badges_by_id = {
+        str(badge["id"]): badge
+        for badge in cached_badges
+        if isinstance(badge, dict) and badge.get("id")
+    }
+
+    new_badges = [
+        badge for badge in fetched_badges
+        if badge["id"] not in badges_by_id
+    ]
+
+    if not new_badges:
+        print(
+            f"No new Credly badges found. Preserved all {len(badges_by_id)} "
+            "cached badge(s); no portfolio deployment is needed."
+        )
+        return
+
+    # Append new credentials without deleting previously cached badges.
+    for badge in new_badges:
+        badges_by_id[badge["id"]] = badge
+
+    badges = list(badges_by_id.values())
+    badges.sort(key=lambda badge: badge.get("issuedAt") or "", reverse=True)
 
     snapshot = {
         "profileUrl": PROFILE_URL,
         "syncedAt": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "badges": badges,
     }
-    OUTPUT.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Synced {len(badges)} public Credly badge(s) to {OUTPUT}")
-
+    OUTPUT.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    print(
+        f"Added {len(new_badges)} new Credly badge(s). "
+        f"Cache now contains {len(badges)} badge(s): {OUTPUT}"
+    )
 
 if __name__ == "__main__":
     try:

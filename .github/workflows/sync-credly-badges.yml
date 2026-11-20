@@ -1,0 +1,50 @@
+name: Sync Credly badges
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/components/Portfolio.astro"
+      - "src/data/content.ts"
+      - "src/data/credly-badges.json"
+      - "src/styles/credentials.css"
+      - "scripts/sync-credly-badges.py"
+      - ".github/workflows/sync-credly-badges.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: credly-badge-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out portfolio
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch public Credly badges
+        run: python scripts/sync-credly-badges.py
+
+      - name: Commit snapshot when it changes
+        run: |
+          if git diff --quiet -- src/data/credly-badges.json; then
+            echo "Credly badges are already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/credly-badges.json
+          git commit -m "chore: sync public Credly badges"
+          git push

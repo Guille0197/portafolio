@@ -1,8 +1,10 @@
 ---
 import { content, type Language } from "../data/content";
 import { caseStudies } from "../data/caseStudies";
+import credlyData from "../data/credly-badges.json";
 import ZipGame from "./ZipGame.astro";
 import "../styles/global.css";
+import "../styles/credentials.css";
 interface Props { lang: Language }
 const { lang } = Astro.props;
 const t = content[lang];
@@ -17,7 +19,8 @@ const profilePhoto = base + "gan01_97.webp";
 const ogImage = new URL(base + "og-cover.svg", Astro.site).toString();
 const github = "https://github.com/Guille0197";
 const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
-const ids = ["projects","experience","about","stack","contact"];
+const ids = ["projects","experience","about","stack","certifications","contact"];
+const credlyBadges = credlyData.badges ?? [];
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -32,7 +35,7 @@ const structuredData = {
       knowsLanguage: ["en", "es"],
       homeLocation: { "@type": "Place", name: "Panama City, Panama" },
       knowsAbout: ["Full Stack Development", "TypeScript", "Angular", "React", "Java", "Spring Boot", "AWS", "Mobile Applications", "SaaS", "Cloud Computing"],
-      sameAs: [github, linkedin, "https://remote.io/guillermo-navarro", "https://www.upwork.com/freelancers/~01ca2bbe18b62bfa62"]
+      sameAs: [github, linkedin, "https://www.credly.com/users/guillermo-navarro.e5ab8764", "https://remote.io/guillermo-navarro", "https://www.upwork.com/freelancers/~01ca2bbe18b62bfa62"]
     },
     {
       "@type": "WebSite",
@@ -96,7 +99,7 @@ const structuredDataJson = JSON.stringify(structuredData).replace(/</g, "\\u003c
   <header class="topbar"><div class="container topbar-inner">
     <a href={current} class="identity"><span class="logo logo-code" aria-hidden="true"><span class="code-bracket">&lt;</span><span class="code-initials">GN</span><span class="code-slash"> /</span><span class="code-bracket">&gt;</span></span><span class="identity-name">Guillermo Navarro</span></a>
     <nav aria-label={lang === "en" ? "Main navigation" : "Navegación principal"} class="navlinks">{t.nav.map((name,i)=><a href={"#"+ids[i]}>{name}</a>)}</nav>
-    <div class="header-actions"><a class="language" href={other} aria-label={lang === "en" ? "Cambiar a español" : "Switch to English"}>◎ {lang === "en" ? "ES" : "EN"}</a><a class="contact-top" href="#contact">{t.nav[4]} ↗</a></div>
+    <div class="header-actions"><a class="language" href={other} aria-label={lang === "en" ? "Cambiar a español" : "Switch to English"}>◎ {lang === "en" ? "ES" : "EN"}</a><a class="contact-top" href="#contact">{t.nav[5]} ↗</a></div>
   </div></header>
   <main id="main">
     <section class="hero container">
@@ -139,8 +142,43 @@ const structuredDataJson = JSON.stringify(structuredData).replace(/</g, "\\u003c
       <div class="section-intro"><div><p class="kicker">04 / TOOLKIT</p><h2>{t.section[3]}</h2></div><p>{t.sectionDescriptions[3]}</p></div>
       <div class="toolkit">{t.skills.map((group,i)=><article class:list={["skill-card",i===3 && "ai-card"]}><div class="skill-heading"><span class="skill-number">0{i+1}</span><h3>{group.title}</h3></div><div class="skills">{group.items.map(item=><span>{item}</span>)}</div></article>)}</div>
     </section>
+    <section id="certifications" class="section container credentials-section">
+      <div class="section-intro">
+        <div><p class="kicker">{t.credentials.eyebrow}</p><h2>{t.credentials.title}</h2></div>
+        <div class="credentials-intro-copy">
+          <p>{t.credentials.description}</p>
+          <a href="https://www.credly.com/users/guillermo-navarro.e5ab8764" target="_blank" rel="noopener noreferrer">{t.credentials.profileCta} ↗</a>
+        </div>
+      </div>
+      <div class="credentials-meta">
+        <span>{credlyBadges.length} {credlyBadges.length === 1 ? t.credentials.singleCount : t.credentials.pluralCount}</span>
+        {credlyData.syncedAt && <span>{t.credentials.updatedLabel} {new Date(credlyData.syncedAt).toLocaleDateString(lang === "en" ? "en-US" : "es-PA", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" })}</span>}
+      </div>
+      {credlyBadges.length > 0 ? (
+        <div class="credentials-grid">
+          {credlyBadges.map((badge) => (
+            <article class="credential-card">
+              <a class="credential-link" href={badge.credentialUrl} target="_blank" rel="noopener noreferrer">
+                <div class="credential-image"><img src={badge.imageUrl} alt={badge.name + " badge"} width="112" height="112" loading="lazy" /></div>
+                <div class="credential-content">
+                  <p class="credential-issuer">{badge.issuer || "Credly"}</p>
+                  <h3>{badge.name}</h3>
+                  {badge.issuedAt && <time datetime={badge.issuedAt}>{t.credentials.issuedLabel} {new Date(badge.issuedAt).toLocaleDateString(lang === "en" ? "en-US" : "es-PA", { year: "numeric", month: "short", timeZone: "UTC" })}</time>}
+                </div>
+                <span class="credential-arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="credentials-empty">
+          <p>{t.credentials.empty}</p>
+          <a href="https://www.credly.com/users/guillermo-navarro.e5ab8764" target="_blank" rel="noopener noreferrer">{t.credentials.profileCta} ↗</a>
+        </div>
+      )}
+    </section>
     <section id="contact" class="container contact-section">
-      <div class="contact-panel"><div><p class="kicker">05 / CONTACT</p><h2>{t.section[4]}</h2><p>{t.sectionDescriptions[4]}</p></div><div class="actions"><a class="btn primary" href="mailto:gnavarro0197@gmail.com">{t.email} ↗</a><a class="btn secondary" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+      <div class="contact-panel"><div><p class="kicker">06 / CONTACT</p><h2>{t.section[4]}</h2><p>{t.sectionDescriptions[4]}</p></div><div class="actions"><a class="btn primary" href="mailto:gnavarro0197@gmail.com">{t.email} ↗</a><a class="btn secondary" href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
     </section>
   </main>
   <ZipGame lang={lang} />

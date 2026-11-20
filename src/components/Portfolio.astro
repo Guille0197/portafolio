@@ -19,8 +19,10 @@ const profilePhoto = base + "gan01_97.webp";
 const ogImage = new URL(base + "og-cover.svg", Astro.site).toString();
 const github = "https://github.com/Guille0197";
 const linkedin = "https://www.linkedin.com/in/guillermo-antonio-navarro/";
+interface CredlyBadge { id: string; name: string; issuer: string; issuedAt: string; imageUrl: string; credentialUrl: string; description: string; skills: string[] }
+const credlySnapshot = credlyData as { syncedAt: string | null; badges: CredlyBadge[] };
 const ids = ["projects","experience","about","stack","certifications","contact"];
-const credlyBadges = credlyData.badges ?? [];
+const credlyBadges = credlySnapshot.badges ?? [];
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -152,7 +154,7 @@ const structuredDataJson = JSON.stringify(structuredData).replace(/</g, "\\u003c
       </div>
       <div class="credentials-meta">
         <span>{credlyBadges.length} {credlyBadges.length === 1 ? t.credentials.singleCount : t.credentials.pluralCount}</span>
-        {credlyData.syncedAt && <span>{t.credentials.updatedLabel} {new Date(credlyData.syncedAt).toLocaleDateString(lang === "en" ? "en-US" : "es-PA", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" })}</span>}
+        {credlySnapshot.syncedAt && <span>{t.credentials.updatedLabel} {new Date(credlySnapshot.syncedAt).toLocaleDateString(lang === "en" ? "en-US" : "es-PA", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" })}</span>}
       </div>
       {credlyBadges.length > 0 ? (
         <div class="credentials-grid">

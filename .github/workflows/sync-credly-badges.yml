@@ -2,7 +2,7 @@ name: Sync Credly badges
 
 on:
   schedule:
-    - cron: "23 */6 * * *"
+    - cron: "23 14 1 * *"
   workflow_dispatch:
   push:
     branches: [main]

@@ -4,15 +4,6 @@ on:
   schedule:
     - cron: "23 14 1 * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "src/components/Portfolio.astro"
-      - "src/data/content.ts"
-      - "src/data/credly-badges.json"
-      - "src/styles/credentials.css"
-      - "scripts/sync-credly-badges.py"
-      - ".github/workflows/sync-credly-badges.yml"
 
 permissions:
   contents: write

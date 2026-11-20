@@ -1,5 +1,55 @@
 {
   "profileUrl": "https://www.credly.com/users/guillermo-navarro.e5ab8764",
-  "syncedAt": null,
-  "badges": []
+  "syncedAt": "2026-11-20T00:06:03Z",
+  "badges": [
+    {
+      "id": "38c3d154-8f1c-451e-8440-b9c958ce8164",
+      "name": "Meta Front-End Developer Professional Certificate(v.1)",
+      "issuer": "Coursera · Meta",
+      "issuedAt": "2026-11-19",
+      "imageUrl": "https://images.credly.com/size/220x220/images/99da6577-cbee-4a69-9ee9-0680a44649de/blob",
+      "credentialUrl": "https://www.credly.com/badges/38c3d154-8f1c-451e-8440-b9c958ce8164/public_url",
+      "description": "This course is offered through Coursera, which is an ACE Authorized Instructional Platform. The course objective is to learn how to code and build interactive web pages using HTML5, CSS and JavaScript; in-demand design skills to create professional page layouts using industry-standard tools such as Bootstrap, React, and Figma; GitHub repositories for version control, content management system (CMS) and how to edit images using Figma; and more.",
+      "skills": [
+        "Computer Science Seminar",
+        "Introduction To React Web Development",
+        "Introduction To Web Development",
+        "Programming I In Javascript"
+      ]
+    },
+    {
+      "id": "320457fa-4ac3-453c-9185-0119683dbee9",
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services Training and Certification",
+      "issuedAt": "2025-05-21",
+      "imageUrl": "https://images.credly.com/size/220x220/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
+      "credentialUrl": "https://www.credly.com/badges/320457fa-4ac3-453c-9185-0119683dbee9/public_url",
+      "description": "Earners of this certification have a fundamental understanding of IT services and their uses in the AWS Cloud. They demonstrated cloud fluency and foundational AWS knowledge. Badge owners are able to identify essential AWS services necessary to set up AWS-focused projects.",
+      "skills": [
+        "AWS",
+        "AWS Certification",
+        "AWS Cloud",
+        "Amazon Web Services",
+        "Cloud Certification",
+        "Cloud Computing",
+        "Cloud Platform",
+        "Cloud Services"
+      ]
+    },
+    {
+      "id": "6f78ce94-5cd1-40e8-84df-2e63c44fef4e",
+      "name": "AWS Educate Introduction to Cloud 101 - Training Badge",
+      "issuer": "Amazon Web Services Training and Certification",
+      "issuedAt": "2025-05-12",
+      "imageUrl": "https://images.credly.com/size/220x220/images/e51a8579-188d-4363-8ed1-12ad164ef57b/blob",
+      "credentialUrl": "https://www.credly.com/badges/6f78ce94-5cd1-40e8-84df-2e63c44fef4e/public_url",
+      "description": "Earners of this badge have completed the Cloud Computing 101 training and achieved the required scores on the post-course assessment. They have demonstrated the ability to create simple cloud applications in a virtual lab environment. They have shown a fundamental understanding of AWS cloud core services and understand the technical roles required for cloud success.",
+      "skills": [
+        "AWS Cloud",
+        "AWS Cloud Computing",
+        "Amazon Web Services (AWS)",
+        "Cloud Foundations"
+      ]
+    }
+  ]
 }
